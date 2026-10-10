@@ -128,7 +128,7 @@ print("Customer:", 1)
 print("Arrival Time:", arrival_time)
 print("Valid:", valid)
 print("Message:", message)
-
+   
 # -----------------------------------
 # Step 7: Simulate a small route
 # -----------------------------------
