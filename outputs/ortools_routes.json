@@ -1,0 +1,832 @@
+{
+  "dataset": "c101.txt",
+  "vehicles_available": 25,
+  "vehicles_used": 10,
+  "total_distance": 829,
+  "total_delivered_demand": 1810,
+  "vehicle_fixed_cost": 1000,
+  "solver_objective": 10829,
+  "solve_time_seconds": 15.004,
+  "routes": [
+    {
+      "vehicle": 3,
+      "route": [
+        0,
+        13,
+        17,
+        18,
+        19,
+        15,
+        16,
+        14,
+        12,
+        0
+      ],
+      "distance": 96,
+      "load": 190,
+      "capacity": 200,
+      "schedule": [
+        {
+          "customer_id": 13,
+          "service_start": 31,
+          "ready_time": 30,
+          "due_time": 92
+        },
+        {
+          "customer_id": 17,
+          "service_start": 125,
+          "ready_time": 99,
+          "due_time": 148
+        },
+        {
+          "customer_id": 18,
+          "service_start": 218,
+          "ready_time": 179,
+          "due_time": 254
+        },
+        {
+          "customer_id": 19,
+          "service_start": 313,
+          "ready_time": 278,
+          "due_time": 345
+        },
+        {
+          "customer_id": 15,
+          "service_start": 408,
+          "ready_time": 384,
+          "due_time": 429
+        },
+        {
+          "customer_id": 16,
+          "service_start": 503,
+          "ready_time": 475,
+          "due_time": 528
+        },
+        {
+          "customer_id": 14,
+          "service_start": 595,
+          "ready_time": 567,
+          "due_time": 620
+        },
+        {
+          "customer_id": 12,
+          "service_start": 688,
+          "ready_time": 652,
+          "due_time": 721
+        }
+      ]
+    },
+    {
+      "vehicle": 6,
+      "route": [
+        0,
+        57,
+        55,
+        54,
+        53,
+        56,
+        58,
+        60,
+        59,
+        0
+      ],
+      "distance": 101,
+      "load": 200,
+      "capacity": 200,
+      "schedule": [
+        {
+          "customer_id": 57,
+          "service_start": 35,
+          "ready_time": 35,
+          "due_time": 87
+        },
+        {
+          "customer_id": 55,
+          "service_start": 127,
+          "ready_time": 95,
+          "due_time": 158
+        },
+        {
+          "customer_id": 54,
+          "service_start": 222,
+          "ready_time": 186,
+          "due_time": 257
+        },
+        {
+          "customer_id": 53,
+          "service_start": 317,
+          "ready_time": 286,
+          "due_time": 347
+        },
+        {
+          "customer_id": 56,
+          "service_start": 411,
+          "ready_time": 385,
+          "due_time": 436
+        },
+        {
+          "customer_id": 58,
+          "service_start": 503,
+          "ready_time": 471,
+          "due_time": 534
+        },
+        {
+          "customer_id": 60,
+          "service_start": 596,
+          "ready_time": 562,
+          "due_time": 629
+        },
+        {
+          "customer_id": 59,
+          "service_start": 696,
+          "ready_time": 651,
+          "due_time": 740
+        }
+      ]
+    },
+    {
+      "vehicle": 7,
+      "route": [
+        0,
+        32,
+        33,
+        31,
+        35,
+        37,
+        38,
+        39,
+        36,
+        34,
+        0
+      ],
+      "distance": 97,
+      "load": 200,
+      "capacity": 200,
+      "schedule": [
+        {
+          "customer_id": 32,
+          "service_start": 32,
+          "ready_time": 31,
+          "due_time": 100
+        },
+        {
+          "customer_id": 33,
+          "service_start": 124,
+          "ready_time": 87,
+          "due_time": 158
+        },
+        {
+          "customer_id": 31,
+          "service_start": 219,
+          "ready_time": 200,
+          "due_time": 237
+        },
+        {
+          "customer_id": 35,
+          "service_start": 314,
+          "ready_time": 283,
+          "due_time": 344
+        },
+        {
+          "customer_id": 37,
+          "service_start": 410,
+          "ready_time": 383,
+          "due_time": 434
+        },
+        {
+          "customer_id": 38,
+          "service_start": 502,
+          "ready_time": 479,
+          "due_time": 522
+        },
+        {
+          "customer_id": 39,
+          "service_start": 597,
+          "ready_time": 567,
+          "due_time": 624
+        },
+        {
+          "customer_id": 36,
+          "service_start": 692,
+          "ready_time": 665,
+          "due_time": 716
+        },
+        {
+          "customer_id": 34,
+          "service_start": 785,
+          "ready_time": 751,
+          "due_time": 816
+        }
+      ]
+    },
+    {
+      "vehicle": 8,
+      "route": [
+        0,
+        90,
+        87,
+        86,
+        83,
+        82,
+        84,
+        85,
+        88,
+        89,
+        91,
+        0
+      ],
+      "distance": 77,
+      "load": 170,
+      "capacity": 200,
+      "schedule": [
+        {
+          "customer_id": 90,
+          "service_start": 21,
+          "ready_time": 20,
+          "due_time": 84
+        },
+        {
+          "customer_id": 87,
+          "service_start": 116,
+          "ready_time": 85,
+          "due_time": 144
+        },
+        {
+          "customer_id": 86,
+          "service_start": 207,
+          "ready_time": 173,
+          "due_time": 238
+        },
+        {
+          "customer_id": 83,
+          "service_start": 303,
+          "ready_time": 265,
+          "due_time": 338
+        },
+        {
+          "customer_id": 82,
+          "service_start": 396,
+          "ready_time": 369,
+          "due_time": 420
+        },
+        {
+          "customer_id": 84,
+          "service_start": 492,
+          "ready_time": 458,
+          "due_time": 523
+        },
+        {
+          "customer_id": 85,
+          "service_start": 585,
+          "ready_time": 555,
+          "due_time": 612
+        },
+        {
+          "customer_id": 88,
+          "service_start": 678,
+          "ready_time": 645,
+          "due_time": 708
+        },
+        {
+          "customer_id": 89,
+          "service_start": 771,
+          "ready_time": 737,
+          "due_time": 802
+        },
+        {
+          "customer_id": 91,
+          "service_start": 865,
+          "ready_time": 836,
+          "due_time": 889
+        }
+      ]
+    },
+    {
+      "vehicle": 9,
+      "route": [
+        0,
+        98,
+        96,
+        95,
+        94,
+        92,
+        93,
+        97,
+        100,
+        99,
+        0
+      ],
+      "distance": 97,
+      "load": 190,
+      "capacity": 200,
+      "schedule": [
+        {
+          "customer_id": 98,
+          "service_start": 31,
+          "ready_time": 30,
+          "due_time": 84
+        },
+        {
+          "customer_id": 96,
+          "service_start": 126,
+          "ready_time": 95,
+          "due_time": 156
+        },
+        {
+          "customer_id": 95,
+          "service_start": 218,
+          "ready_time": 196,
+          "due_time": 239
+        },
+        {
+          "customer_id": 94,
+          "service_start": 312,
+          "ready_time": 285,
+          "due_time": 336
+        },
+        {
+          "customer_id": 92,
+          "service_start": 406,
+          "ready_time": 368,
+          "due_time": 441
+        },
+        {
+          "customer_id": 93,
+          "service_start": 498,
+          "ready_time": 475,
+          "due_time": 518
+        },
+        {
+          "customer_id": 97,
+          "service_start": 593,
+          "ready_time": 561,
+          "due_time": 622
+        },
+        {
+          "customer_id": 100,
+          "service_start": 688,
+          "ready_time": 647,
+          "due_time": 726
+        },
+        {
+          "customer_id": 99,
+          "service_start": 783,
+          "ready_time": 743,
+          "due_time": 820
+        }
+      ]
+    },
+    {
+      "vehicle": 11,
+      "route": [
+        0,
+        5,
+        3,
+        7,
+        8,
+        10,
+        11,
+        9,
+        6,
+        4,
+        2,
+        1,
+        75,
+        0
+      ],
+      "distance": 60,
+      "load": 180,
+      "capacity": 200,
+      "schedule": [
+        {
+          "customer_id": 5,
+          "service_start": 15,
+          "ready_time": 15,
+          "due_time": 67
+        },
+        {
+          "customer_id": 3,
+          "service_start": 106,
+          "ready_time": 65,
+          "due_time": 146
+        },
+        {
+          "customer_id": 7,
+          "service_start": 198,
+          "ready_time": 170,
+          "due_time": 225
+        },
+        {
+          "customer_id": 8,
+          "service_start": 291,
+          "ready_time": 255,
+          "due_time": 324
+        },
+        {
+          "customer_id": 10,
+          "service_start": 385,
+          "ready_time": 357,
+          "due_time": 410
+        },
+        {
+          "customer_id": 11,
+          "service_start": 478,
+          "ready_time": 448,
+          "due_time": 505
+        },
+        {
+          "customer_id": 9,
+          "service_start": 571,
+          "ready_time": 534,
+          "due_time": 605
+        },
+        {
+          "customer_id": 6,
+          "service_start": 663,
+          "ready_time": 621,
+          "due_time": 702
+        },
+        {
+          "customer_id": 4,
+          "service_start": 755,
+          "ready_time": 727,
+          "due_time": 782
+        },
+        {
+          "customer_id": 2,
+          "service_start": 849,
+          "ready_time": 825,
+          "due_time": 870
+        },
+        {
+          "customer_id": 1,
+          "service_start": 941,
+          "ready_time": 912,
+          "due_time": 967
+        },
+        {
+          "customer_id": 75,
+          "service_start": 1034,
+          "ready_time": 997,
+          "due_time": 1068
+        }
+      ]
+    },
+    {
+      "vehicle": 15,
+      "route": [
+        0,
+        43,
+        42,
+        41,
+        40,
+        44,
+        46,
+        45,
+        48,
+        51,
+        50,
+        52,
+        49,
+        47,
+        0
+      ],
+      "distance": 65,
+      "load": 160,
+      "capacity": 200,
+      "schedule": [
+        {
+          "customer_id": 43,
+          "service_start": 17,
+          "ready_time": 16,
+          "due_time": 80
+        },
+        {
+          "customer_id": 42,
+          "service_start": 110,
+          "ready_time": 68,
+          "due_time": 149
+        },
+        {
+          "customer_id": 41,
+          "service_start": 202,
+          "ready_time": 166,
+          "due_time": 235
+        },
+        {
+          "customer_id": 40,
+          "service_start": 294,
+          "ready_time": 264,
+          "due_time": 321
+        },
+        {
+          "customer_id": 44,
+          "service_start": 387,
+          "ready_time": 359,
+          "due_time": 412
+        },
+        {
+          "customer_id": 46,
+          "service_start": 480,
+          "ready_time": 448,
+          "due_time": 509
+        },
+        {
+          "customer_id": 45,
+          "service_start": 572,
+          "ready_time": 541,
+          "due_time": 600
+        },
+        {
+          "customer_id": 48,
+          "service_start": 664,
+          "ready_time": 632,
+          "due_time": 693
+        },
+        {
+          "customer_id": 51,
+          "service_start": 757,
+          "ready_time": 725,
+          "due_time": 786
+        },
+        {
+          "customer_id": 50,
+          "service_start": 849,
+          "ready_time": 815,
+          "due_time": 880
+        },
+        {
+          "customer_id": 52,
+          "service_start": 942,
+          "ready_time": 912,
+          "due_time": 969
+        },
+        {
+          "customer_id": 49,
+          "service_start": 1035,
+          "ready_time": 1001,
+          "due_time": 1066
+        },
+        {
+          "customer_id": 47,
+          "service_start": 1127,
+          "ready_time": 1054,
+          "due_time": 1127
+        }
+      ]
+    },
+    {
+      "vehicle": 20,
+      "route": [
+        0,
+        20,
+        24,
+        25,
+        27,
+        29,
+        30,
+        28,
+        26,
+        23,
+        22,
+        21,
+        0
+      ],
+      "distance": 51,
+      "load": 170,
+      "capacity": 200,
+      "schedule": [
+        {
+          "customer_id": 20,
+          "service_start": 10,
+          "ready_time": 10,
+          "due_time": 73
+        },
+        {
+          "customer_id": 24,
+          "service_start": 105,
+          "ready_time": 65,
+          "due_time": 144
+        },
+        {
+          "customer_id": 25,
+          "service_start": 197,
+          "ready_time": 169,
+          "due_time": 224
+        },
+        {
+          "customer_id": 27,
+          "service_start": 289,
+          "ready_time": 261,
+          "due_time": 316
+        },
+        {
+          "customer_id": 29,
+          "service_start": 383,
+          "ready_time": 358,
+          "due_time": 405
+        },
+        {
+          "customer_id": 30,
+          "service_start": 478,
+          "ready_time": 449,
+          "due_time": 504
+        },
+        {
+          "customer_id": 28,
+          "service_start": 571,
+          "ready_time": 546,
+          "due_time": 593
+        },
+        {
+          "customer_id": 26,
+          "service_start": 663,
+          "ready_time": 622,
+          "due_time": 701
+        },
+        {
+          "customer_id": 23,
+          "service_start": 756,
+          "ready_time": 732,
+          "due_time": 777
+        },
+        {
+          "customer_id": 22,
+          "service_start": 849,
+          "ready_time": 812,
+          "due_time": 883
+        },
+        {
+          "customer_id": 21,
+          "service_start": 941,
+          "ready_time": 914,
+          "due_time": 965
+        }
+      ]
+    },
+    {
+      "vehicle": 22,
+      "route": [
+        0,
+        81,
+        78,
+        76,
+        71,
+        70,
+        73,
+        77,
+        79,
+        80,
+        0
+      ],
+      "distance": 126,
+      "load": 150,
+      "capacity": 200,
+      "schedule": [
+        {
+          "customer_id": 81,
+          "service_start": 47,
+          "ready_time": 47,
+          "due_time": 124
+        },
+        {
+          "customer_id": 78,
+          "service_start": 140,
+          "ready_time": 109,
+          "due_time": 170
+        },
+        {
+          "customer_id": 76,
+          "service_start": 232,
+          "ready_time": 203,
+          "due_time": 260
+        },
+        {
+          "customer_id": 71,
+          "service_start": 327,
+          "ready_time": 293,
+          "due_time": 360
+        },
+        {
+          "customer_id": 70,
+          "service_start": 422,
+          "ready_time": 387,
+          "due_time": 456
+        },
+        {
+          "customer_id": 73,
+          "service_start": 515,
+          "ready_time": 478,
+          "due_time": 551
+        },
+        {
+          "customer_id": 77,
+          "service_start": 609,
+          "ready_time": 574,
+          "due_time": 643
+        },
+        {
+          "customer_id": 79,
+          "service_start": 700,
+          "ready_time": 668,
+          "due_time": 731
+        },
+        {
+          "customer_id": 80,
+          "service_start": 795,
+          "ready_time": 769,
+          "due_time": 820
+        }
+      ]
+    },
+    {
+      "vehicle": 23,
+      "route": [
+        0,
+        67,
+        65,
+        63,
+        62,
+        74,
+        72,
+        61,
+        64,
+        68,
+        66,
+        69,
+        0
+      ],
+      "distance": 59,
+      "load": 200,
+      "capacity": 200,
+      "schedule": [
+        {
+          "customer_id": 67,
+          "service_start": 12,
+          "ready_time": 12,
+          "due_time": 77
+        },
+        {
+          "customer_id": 65,
+          "service_start": 103,
+          "ready_time": 76,
+          "due_time": 129
+        },
+        {
+          "customer_id": 63,
+          "service_start": 195,
+          "ready_time": 171,
+          "due_time": 218
+        },
+        {
+          "customer_id": 62,
+          "service_start": 290,
+          "ready_time": 262,
+          "due_time": 317
+        },
+        {
+          "customer_id": 74,
+          "service_start": 383,
+          "ready_time": 353,
+          "due_time": 412
+        },
+        {
+          "customer_id": 72,
+          "service_start": 478,
+          "ready_time": 450,
+          "due_time": 505
+        },
+        {
+          "customer_id": 61,
+          "service_start": 571,
+          "ready_time": 531,
+          "due_time": 610
+        },
+        {
+          "customer_id": 64,
+          "service_start": 663,
+          "ready_time": 632,
+          "due_time": 693
+        },
+        {
+          "customer_id": 68,
+          "service_start": 756,
+          "ready_time": 734,
+          "due_time": 777
+        },
+        {
+          "customer_id": 66,
+          "service_start": 851,
+          "ready_time": 826,
+          "due_time": 875
+        },
+        {
+          "customer_id": 69,
+          "service_start": 943,
+          "ready_time": 916,
+          "due_time": 969
+        }
+      ]
+    }
+  ]
+}
