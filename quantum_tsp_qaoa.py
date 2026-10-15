@@ -1,3 +1,5 @@
+import itertools
+from collections import Counter
 
 import numpy as np
 from scipy.optimize import minimize
@@ -5,12 +7,12 @@ from qiskit import QuantumCircuit
 from qiskit.circuit.library import DiagonalGate
 from qiskit.quantum_info import Statevector
 
+
 # ==================================================
 # 1. DEFINE A SMALL ROUTING PROBLEM
 # ==================================================
 
-# Node 0 = depot
-# Nodes 1, 2, 3 = customers
+# Node 0 = depot; nodes 1, 2, 3 = customers.
 coordinates = np.array([
     [0.0, 0.0],
     [1.0, 0.0],
@@ -38,7 +40,7 @@ print(f"\nQubits: {n_qubits}")
 
 def energy(bitstring):
     # x[city, position] indicates whether a customer
-    # occupies a particular position in the route.
+    # occupies a particular route position.
     x = np.array([
         [
             (bitstring >> (city * n_customers + pos)) & 1
@@ -47,13 +49,10 @@ def energy(bitstring):
         for city in range(n_customers)
     ])
 
-    # Every customer must appear exactly once.
     city_penalty = sum(
         (int(row.sum()) - 1) ** 2
         for row in x
     )
-
-    # Every route position must contain exactly one customer.
     position_penalty = sum(
         (int(x[:, pos].sum()) - 1) ** 2
         for pos in range(n_customers)
@@ -77,17 +76,14 @@ def energy(bitstring):
 
     # Last customer -> depot.
     cost += sum(
-        x[city, n_customers - 1]
-        * distances[city + 1, 0]
+        x[city, n_customers - 1] * distances[city + 1, 0]
         for city in range(n_customers)
     )
 
-    return float(
-        cost + penalty * (city_penalty + position_penalty)
-    )
+    return float(cost + penalty * (city_penalty + position_penalty))
 
 
-# Precompute the cost of every possible bitstring.
+# Precompute cost for all 2^9 computational basis states.
 energies = np.array([
     energy(state)
     for state in range(2 ** n_qubits)
@@ -100,18 +96,11 @@ energies = np.array([
 
 def create_qaoa_circuit(gamma, beta):
     qc = QuantumCircuit(n_qubits)
-
-    # Initial uniform superposition.
     qc.h(range(n_qubits))
 
-    # Cost-dependent phase separator.
     phases = np.exp(-1j * gamma * energies)
-    qc.append(
-        DiagonalGate(phases),
-        list(range(n_qubits)),
-    )
+    qc.append(DiagonalGate(phases), list(range(n_qubits)))
 
-    # X-mixer.
     for qubit in range(n_qubits):
         qc.rx(2 * beta, qubit)
 
@@ -124,29 +113,20 @@ def create_qaoa_circuit(gamma, beta):
 
 def expectation(parameters):
     gamma, beta = parameters
-
     circuit = create_qaoa_circuit(gamma, beta)
-    probabilities = Statevector.from_instruction(
-        circuit
-    ).probabilities()
-
+    probabilities = Statevector.from_instruction(circuit).probabilities()
     return float(np.dot(probabilities, energies))
 
 
 print("\nOptimizing QAOA parameters...")
-
 result = minimize(
     expectation,
     x0=[0.02, 0.3],
     method="COBYLA",
-    options={
-        "maxiter": 100,
-        "rhobeg": 0.1,
-    },
+    options={"maxiter": 100, "rhobeg": 0.1},
 )
 
 gamma, beta = result.x
-
 print("Optimization finished.")
 print("Optimizer success:", result.success)
 print("Best expected energy:", round(result.fun, 4))
@@ -155,24 +135,18 @@ print("Beta:", round(beta, 4))
 
 
 # ==================================================
-# 5. SAMPLE AND CHECK CANDIDATE ROUTES
+# 5. SAMPLE AND COUNT FEASIBLE ROUTES
 # ==================================================
 
 circuit = create_qaoa_circuit(gamma, beta)
-probabilities = Statevector.from_instruction(
-    circuit
-).probabilities()
+probabilities = Statevector.from_instruction(circuit).probabilities()
 
 rng = np.random.default_rng(42)
-
 n_shots = 5000
-samples = rng.choice(
-    2 ** n_qubits,
-    size=n_shots,
-    p=probabilities,
-)
+samples = rng.choice(2 ** n_qubits, size=n_shots, p=probabilities)
 
-feasible_routes = {}
+feasible_route_counts = Counter()
+feasible_route_distances = {}
 
 for sample in samples:
     x = np.array([
@@ -183,17 +157,11 @@ for sample in samples:
         for city in range(n_customers)
     ])
 
-    # Reject assignments violating either constraint.
-    if (
-        np.all(x.sum(axis=0) == 1)
-        and np.all(x.sum(axis=1) == 1)
-    ):
+    # Require every customer exactly once and every position filled.
+    if np.all(x.sum(axis=0) == 1) and np.all(x.sum(axis=1) == 1):
         route = [0]
-
         for pos in range(n_customers):
-            city = int(np.argmax(x[:, pos]))
-            route.append(city + 1)
-
+            route.append(int(np.argmax(x[:, pos])) + 1)
         route.append(0)
         route = tuple(route)
 
@@ -201,39 +169,130 @@ for sample in samples:
             distances[route[i], route[i + 1]]
             for i in range(len(route) - 1)
         )
-
-        feasible_routes[route] = route_distance
+        feasible_route_counts[route] += 1
+        feasible_route_distances[route] = float(route_distance)
 
 
 # ==================================================
-# 6. DISPLAY RESULTS
+# 6. EXACT CLASSICAL BENCHMARK
 # ==================================================
 
-print("\n========== QAOA ROUTING RESULTS ==========")
-print("Shots:", n_shots)
-print("Unique feasible routes sampled:", len(feasible_routes))
-
-if feasible_routes:
-    best_route = min(
-        feasible_routes,
-        key=feasible_routes.get,
+exact_routes = []
+for ordering in itertools.permutations(range(1, n_customers + 1)):
+    route = (0, *ordering, 0)
+    route_distance = sum(
+        distances[route[i], route[i + 1]]
+        for i in range(len(route) - 1)
     )
+    exact_routes.append((route, float(route_distance)))
 
-    print("Best sampled route:", list(best_route))
-    print(
-        "Total distance:",
-        round(feasible_routes[best_route], 4),
-    )
+optimal_distance = min(distance for _, distance in exact_routes)
+optimal_routes = {
+    route for route, distance in exact_routes
+    if np.isclose(distance, optimal_distance)
+}
 
-    print("\nAll feasible routes found:")
-    for route, distance in sorted(
-        feasible_routes.items(),
-        key=lambda item: item[1],
-    ):
-        print(f"{list(route)} -> distance {distance:.4f}")
+feasible_samples = sum(feasible_route_counts.values())
+optimal_samples = sum(
+    count for route, count in feasible_route_counts.items()
+    if route in optimal_routes
+)
+
+# Save machine-readable experiment metrics for later comparisons.
+results_data = {
+    "experiment": "QAOA versus exact classical enumeration on a 3-customer TSP",
+    "problem": {
+        "type": "synthetic TSP",
+        "depot_id": 0,
+        "customer_ids": list(range(1, n_customers + 1)),
+        "coordinates": coordinates.tolist(),
+        "customers": n_customers,
+        "qubits": n_qubits,
+        "penalty": penalty,
+    },
+    "qaoa": {
+        "simulator": "Qiskit Statevector",
+        "optimizer": "COBYLA",
+        "optimizer_success": bool(result.success),
+        "max_iterations": 100,
+        "gamma": float(gamma),
+        "beta": float(beta),
+        "best_expected_energy": float(result.fun),
+        "shots": n_shots,
+        "random_seed": 42,
+        "feasible_samples": feasible_samples,
+        "feasible_sample_rate_percent": 100 * feasible_samples / n_shots,
+        "unique_feasible_routes": len(feasible_route_counts),
+        "optimal_samples": optimal_samples,
+        "optimal_sample_rate_percent_of_all_shots": 100 * optimal_samples / n_shots,
+        "optimal_sample_rate_percent_of_feasible_samples": (
+            100 * optimal_samples / feasible_samples if feasible_samples else 0.0
+        ),
+        "best_route": (
+            list(min(feasible_route_distances, key=feasible_route_distances.get))
+            if feasible_route_distances else None
+        ),
+        "best_route_distance": (
+            min(feasible_route_distances.values())
+            if feasible_route_distances else None
+        ),
+        "route_sample_counts": [
+            {
+                "route": list(route),
+                "distance": feasible_route_distances[route],
+                "samples": count,
+            }
+            for route, count in feasible_route_counts.most_common()
+        ],
+    },
+    "exact_classical": {
+        "method": "exhaustive enumeration of all customer permutations",
+        "routes_evaluated": len(exact_routes),
+        "optimal_distance": float(optimal_distance),
+        "optimal_routes": [list(route) for route in sorted(optimal_routes)],
+        "all_routes": [
+            {"route": list(route), "distance": distance}
+            for route, distance in sorted(exact_routes, key=lambda item: item[1])
+        ],
+    },
+    "interpretation": [
+        "QAOA sampled a route matching the exact optimum on this small synthetic TSP.",
+        "This is a classical statevector simulation and is not evidence of quantum speedup.",
+        "Vehicle capacity and time-window constraints are not implemented in this prototype.",
+    ],
+}
+
+
+# ==================================================
+# 7. DISPLAY RESULTS
+# ==================================================
+
+print("\n========== QAOA EVALUATION ==========")
+print("Total shots:", n_shots)
+print("Feasible samples:", feasible_samples)
+print("Unique feasible routes:", len(feasible_route_counts))
+print("Exact optimal distance:", round(optimal_distance, 4))
+print("Optimal samples:", optimal_samples)
+print(f"Optimal-sample rate: {100 * optimal_samples / n_shots:.2f}%")
+print(f"Feasible-sample rate: {100 * feasible_samples / n_shots:.2f}%")
+
+if feasible_route_distances:
+    best_route = min(feasible_route_distances, key=feasible_route_distances.get)
+    print("Best QAOA route:", list(best_route))
+    print("Best QAOA distance:", round(feasible_route_distances[best_route], 4))
 else:
     print("No feasible routes were sampled.")
-    print("Try changing the initial parameters or iteration count.")
 
-print("\nNote: This is a small TSP prototype.")
+print("\nExact optimal routes:")
+for route in sorted(optimal_routes):
+    print(f"{list(route)} -> distance {optimal_distance:.4f}")
+
+print("\nSample counts for feasible routes:")
+for route, count in feasible_route_counts.most_common():
+    print(
+        f"{list(route)} -> distance {feasible_route_distances[route]:.4f}, "
+        f"samples {count}"
+    )
+
+print("\nNote: This is a small synthetic TSP prototype.")
 print("Vehicle capacity and time windows are not implemented yet.")
