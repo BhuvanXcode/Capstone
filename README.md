@@ -241,11 +241,6 @@ the same instance.
 4.  Open a pull request describing the change and any experimental
     results.
 
-## License
-
-No license information was visible in the repository overview when this
-README was prepared. Add a `LICENSE` file and update this section if the
-project is distributed under a specific open-source license.
 
 ## Acknowledgements
 
