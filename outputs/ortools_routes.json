@@ -6,7 +6,7 @@
   "total_delivered_demand": 1810,
   "vehicle_fixed_cost": 1000,
   "solver_objective": 10829,
-  "solve_time_seconds": 15.004,
+  "solve_time_seconds": 15.0,
   "routes": [
     {
       "vehicle": 3,
