@@ -1,0 +1,1549 @@
+{
+  "status": "HYBRID_SOLVER_COMPLETED",
+  "total_customers": 100,
+  "vehicle_count": 11,
+  "total_distance": 1353.899,
+  "fleet_evaluation": {
+    "dataset_name": "Hybrid-QAOA-VRPTW-100Cust",
+    "total_customers_expected": 100,
+    "total_customers_served": 100,
+    "unique_customers_served": 100,
+    "missing_customer_ids": [],
+    "duplicate_customer_ids": [],
+    "is_coverage_valid": true,
+    "coverage_report": "PASSED: All 100 customers are visited exactly once.",
+    "vehicles_used": 11,
+    "vehicle_capacity_limit": 200.0,
+    "total_demand_expected": 1810.0,
+    "total_demand_delivered": 1810.0,
+    "is_capacity_valid": true,
+    "capacity_violations_count": 0,
+    "capacity_overloads_detail": [],
+    "total_distance": 1353.899,
+    "total_travel_time": 1353.899,
+    "total_waiting_time": 5351.2306,
+    "total_service_time": 9000.0,
+    "total_fleet_duration": 15705.1296,
+    "is_time_window_valid": false,
+    "time_window_violations_count": 89,
+    "total_lateness": 50570.0051,
+    "time_window_violations_detail": [
+      {
+        "vehicle_id": 1,
+        "stop_index": 2,
+        "customer_id": 83,
+        "arrival_time": 462.0,
+        "due_time": 338.0,
+        "lateness": 124.0
+      },
+      {
+        "vehicle_id": 1,
+        "stop_index": 3,
+        "customer_id": 86,
+        "arrival_time": 558.0,
+        "due_time": 238.0,
+        "lateness": 320.0
+      },
+      {
+        "vehicle_id": 1,
+        "stop_index": 4,
+        "customer_id": 87,
+        "arrival_time": 649.0,
+        "due_time": 144.0,
+        "lateness": 505.0
+      },
+      {
+        "vehicle_id": 1,
+        "stop_index": 5,
+        "customer_id": 84,
+        "arrival_time": 744.83,
+        "due_time": 523.0,
+        "lateness": 221.83
+      },
+      {
+        "vehicle_id": 1,
+        "stop_index": 6,
+        "customer_id": 90,
+        "arrival_time": 845.27,
+        "due_time": 84.0,
+        "lateness": 761.27
+      },
+      {
+        "vehicle_id": 1,
+        "stop_index": 7,
+        "customer_id": 89,
+        "arrival_time": 939.51,
+        "due_time": 802.0,
+        "lateness": 137.51
+      },
+      {
+        "vehicle_id": 1,
+        "stop_index": 8,
+        "customer_id": 85,
+        "arrival_time": 1034.9,
+        "due_time": 612.0,
+        "lateness": 422.9
+      },
+      {
+        "vehicle_id": 1,
+        "stop_index": 9,
+        "customer_id": 88,
+        "arrival_time": 1127.9,
+        "due_time": 708.0,
+        "lateness": 419.9
+      },
+      {
+        "vehicle_id": 1,
+        "stop_index": 10,
+        "customer_id": 91,
+        "arrival_time": 1222.9,
+        "due_time": 889.0,
+        "lateness": 333.9
+      },
+      {
+        "vehicle_id": 1,
+        "stop_index": 11,
+        "customer_id": 0,
+        "arrival_time": 1335.26,
+        "due_time": 1236.0,
+        "lateness": 99.26
+      },
+      {
+        "vehicle_id": 1,
+        "stop_index": 11,
+        "customer_id": 0,
+        "arrival_time": 1335.26,
+        "due_time": 1236.0,
+        "lateness": 99.26
+      },
+      {
+        "vehicle_id": 2,
+        "stop_index": 3,
+        "customer_id": 95,
+        "arrival_time": 475.68,
+        "due_time": 239.0,
+        "lateness": 236.68
+      },
+      {
+        "vehicle_id": 2,
+        "stop_index": 4,
+        "customer_id": 98,
+        "arrival_time": 572.08,
+        "due_time": 84.0,
+        "lateness": 488.08
+      },
+      {
+        "vehicle_id": 2,
+        "stop_index": 5,
+        "customer_id": 93,
+        "arrival_time": 674.29,
+        "due_time": 518.0,
+        "lateness": 156.29
+      },
+      {
+        "vehicle_id": 2,
+        "stop_index": 6,
+        "customer_id": 96,
+        "arrival_time": 771.36,
+        "due_time": 156.0,
+        "lateness": 615.36
+      },
+      {
+        "vehicle_id": 2,
+        "stop_index": 7,
+        "customer_id": 100,
+        "arrival_time": 868.43,
+        "due_time": 726.0,
+        "lateness": 142.43
+      },
+      {
+        "vehicle_id": 2,
+        "stop_index": 8,
+        "customer_id": 97,
+        "arrival_time": 963.43,
+        "due_time": 622.0,
+        "lateness": 341.43
+      },
+      {
+        "vehicle_id": 2,
+        "stop_index": 9,
+        "customer_id": 99,
+        "arrival_time": 1060.5,
+        "due_time": 820.0,
+        "lateness": 240.5
+      },
+      {
+        "vehicle_id": 3,
+        "stop_index": 3,
+        "customer_id": 2,
+        "arrival_time": 1100.0,
+        "due_time": 870.0,
+        "lateness": 230.0
+      },
+      {
+        "vehicle_id": 3,
+        "stop_index": 4,
+        "customer_id": 4,
+        "arrival_time": 1193.61,
+        "due_time": 782.0,
+        "lateness": 411.61
+      },
+      {
+        "vehicle_id": 3,
+        "stop_index": 5,
+        "customer_id": 3,
+        "arrival_time": 1285.61,
+        "due_time": 146.0,
+        "lateness": 1139.61
+      },
+      {
+        "vehicle_id": 3,
+        "stop_index": 6,
+        "customer_id": 5,
+        "arrival_time": 1376.61,
+        "due_time": 67.0,
+        "lateness": 1309.61
+      },
+      {
+        "vehicle_id": 3,
+        "stop_index": 7,
+        "customer_id": 7,
+        "arrival_time": 1468.84,
+        "due_time": 225.0,
+        "lateness": 1243.84
+      },
+      {
+        "vehicle_id": 3,
+        "stop_index": 8,
+        "customer_id": 6,
+        "arrival_time": 1561.84,
+        "due_time": 702.0,
+        "lateness": 859.84
+      },
+      {
+        "vehicle_id": 3,
+        "stop_index": 9,
+        "customer_id": 9,
+        "arrival_time": 1654.08,
+        "due_time": 605.0,
+        "lateness": 1049.08
+      },
+      {
+        "vehicle_id": 3,
+        "stop_index": 10,
+        "customer_id": 8,
+        "arrival_time": 1746.08,
+        "due_time": 324.0,
+        "lateness": 1422.08
+      },
+      {
+        "vehicle_id": 3,
+        "stop_index": 11,
+        "customer_id": 0,
+        "arrival_time": 1854.19,
+        "due_time": 1236.0,
+        "lateness": 618.19
+      },
+      {
+        "vehicle_id": 3,
+        "stop_index": 11,
+        "customer_id": 0,
+        "arrival_time": 1854.19,
+        "due_time": 1236.0,
+        "lateness": 618.19
+      },
+      {
+        "vehicle_id": 4,
+        "stop_index": 2,
+        "customer_id": 11,
+        "arrival_time": 760.87,
+        "due_time": 505.0,
+        "lateness": 255.87
+      },
+      {
+        "vehicle_id": 4,
+        "stop_index": 3,
+        "customer_id": 10,
+        "arrival_time": 853.87,
+        "due_time": 410.0,
+        "lateness": 443.87
+      },
+      {
+        "vehicle_id": 4,
+        "stop_index": 4,
+        "customer_id": 14,
+        "arrival_time": 966.89,
+        "due_time": 620.0,
+        "lateness": 346.89
+      },
+      {
+        "vehicle_id": 4,
+        "stop_index": 5,
+        "customer_id": 16,
+        "arrival_time": 1058.89,
+        "due_time": 528.0,
+        "lateness": 530.89
+      },
+      {
+        "vehicle_id": 4,
+        "stop_index": 6,
+        "customer_id": 15,
+        "arrival_time": 1153.89,
+        "due_time": 429.0,
+        "lateness": 724.89
+      },
+      {
+        "vehicle_id": 4,
+        "stop_index": 7,
+        "customer_id": 17,
+        "arrival_time": 1249.27,
+        "due_time": 148.0,
+        "lateness": 1101.27
+      },
+      {
+        "vehicle_id": 4,
+        "stop_index": 8,
+        "customer_id": 19,
+        "arrival_time": 1345.11,
+        "due_time": 345.0,
+        "lateness": 1000.11
+      },
+      {
+        "vehicle_id": 4,
+        "stop_index": 9,
+        "customer_id": 13,
+        "arrival_time": 1443.71,
+        "due_time": 92.0,
+        "lateness": 1351.71
+      },
+      {
+        "vehicle_id": 4,
+        "stop_index": 10,
+        "customer_id": 0,
+        "arrival_time": 1564.51,
+        "due_time": 1236.0,
+        "lateness": 328.51
+      },
+      {
+        "vehicle_id": 4,
+        "stop_index": 10,
+        "customer_id": 0,
+        "arrival_time": 1564.51,
+        "due_time": 1236.0,
+        "lateness": 328.51
+      },
+      {
+        "vehicle_id": 5,
+        "stop_index": 2,
+        "customer_id": 26,
+        "arrival_time": 825.0,
+        "due_time": 701.0,
+        "lateness": 124.0
+      },
+      {
+        "vehicle_id": 5,
+        "stop_index": 3,
+        "customer_id": 18,
+        "arrival_time": 937.36,
+        "due_time": 254.0,
+        "lateness": 683.36
+      },
+      {
+        "vehicle_id": 5,
+        "stop_index": 4,
+        "customer_id": 28,
+        "arrival_time": 1048.9,
+        "due_time": 593.0,
+        "lateness": 455.9
+      },
+      {
+        "vehicle_id": 5,
+        "stop_index": 5,
+        "customer_id": 30,
+        "arrival_time": 1141.9,
+        "due_time": 504.0,
+        "lateness": 637.9
+      },
+      {
+        "vehicle_id": 5,
+        "stop_index": 6,
+        "customer_id": 21,
+        "arrival_time": 1242.34,
+        "due_time": 965.0,
+        "lateness": 277.34
+      },
+      {
+        "vehicle_id": 5,
+        "stop_index": 7,
+        "customer_id": 20,
+        "arrival_time": 1334.34,
+        "due_time": 73.0,
+        "lateness": 1261.34
+      },
+      {
+        "vehicle_id": 5,
+        "stop_index": 8,
+        "customer_id": 25,
+        "arrival_time": 1429.73,
+        "due_time": 224.0,
+        "lateness": 1205.73
+      },
+      {
+        "vehicle_id": 5,
+        "stop_index": 9,
+        "customer_id": 27,
+        "arrival_time": 1521.73,
+        "due_time": 316.0,
+        "lateness": 1205.73
+      },
+      {
+        "vehicle_id": 5,
+        "stop_index": 10,
+        "customer_id": 22,
+        "arrival_time": 1616.73,
+        "due_time": 883.0,
+        "lateness": 733.73
+      },
+      {
+        "vehicle_id": 5,
+        "stop_index": 11,
+        "customer_id": 0,
+        "arrival_time": 1718.89,
+        "due_time": 1236.0,
+        "lateness": 482.89
+      },
+      {
+        "vehicle_id": 5,
+        "stop_index": 11,
+        "customer_id": 0,
+        "arrival_time": 1718.89,
+        "due_time": 1236.0,
+        "lateness": 482.89
+      },
+      {
+        "vehicle_id": 6,
+        "stop_index": 5,
+        "customer_id": 36,
+        "arrival_time": 844.0,
+        "due_time": 716.0,
+        "lateness": 128.0
+      },
+      {
+        "vehicle_id": 6,
+        "stop_index": 6,
+        "customer_id": 38,
+        "arrival_time": 941.07,
+        "due_time": 522.0,
+        "lateness": 419.07
+      },
+      {
+        "vehicle_id": 6,
+        "stop_index": 7,
+        "customer_id": 32,
+        "arrival_time": 1041.07,
+        "due_time": 100.0,
+        "lateness": 941.07
+      },
+      {
+        "vehicle_id": 6,
+        "stop_index": 8,
+        "customer_id": 33,
+        "arrival_time": 1133.07,
+        "due_time": 158.0,
+        "lateness": 975.07
+      },
+      {
+        "vehicle_id": 6,
+        "stop_index": 9,
+        "customer_id": 37,
+        "arrival_time": 1229.07,
+        "due_time": 434.0,
+        "lateness": 795.07
+      },
+      {
+        "vehicle_id": 6,
+        "stop_index": 10,
+        "customer_id": 35,
+        "arrival_time": 1324.9,
+        "due_time": 344.0,
+        "lateness": 980.9
+      },
+      {
+        "vehicle_id": 6,
+        "stop_index": 11,
+        "customer_id": 0,
+        "arrival_time": 1452.98,
+        "due_time": 1236.0,
+        "lateness": 216.98
+      },
+      {
+        "vehicle_id": 6,
+        "stop_index": 11,
+        "customer_id": 0,
+        "arrival_time": 1452.98,
+        "due_time": 1236.0,
+        "lateness": 216.98
+      },
+      {
+        "vehicle_id": 7,
+        "stop_index": 5,
+        "customer_id": 51,
+        "arrival_time": 1194.07,
+        "due_time": 786.0,
+        "lateness": 408.07
+      },
+      {
+        "vehicle_id": 7,
+        "stop_index": 6,
+        "customer_id": 50,
+        "arrival_time": 1286.31,
+        "due_time": 880.0,
+        "lateness": 406.31
+      },
+      {
+        "vehicle_id": 7,
+        "stop_index": 7,
+        "customer_id": 43,
+        "arrival_time": 1383.92,
+        "due_time": 80.0,
+        "lateness": 1303.92
+      },
+      {
+        "vehicle_id": 7,
+        "stop_index": 8,
+        "customer_id": 46,
+        "arrival_time": 1478.17,
+        "due_time": 509.0,
+        "lateness": 969.17
+      },
+      {
+        "vehicle_id": 7,
+        "stop_index": 9,
+        "customer_id": 45,
+        "arrival_time": 1570.17,
+        "due_time": 600.0,
+        "lateness": 970.17
+      },
+      {
+        "vehicle_id": 7,
+        "stop_index": 10,
+        "customer_id": 48,
+        "arrival_time": 1662.17,
+        "due_time": 693.0,
+        "lateness": 969.17
+      },
+      {
+        "vehicle_id": 7,
+        "stop_index": 11,
+        "customer_id": 0,
+        "arrival_time": 1775.49,
+        "due_time": 1236.0,
+        "lateness": 539.49
+      },
+      {
+        "vehicle_id": 7,
+        "stop_index": 11,
+        "customer_id": 0,
+        "arrival_time": 1775.49,
+        "due_time": 1236.0,
+        "lateness": 539.49
+      },
+      {
+        "vehicle_id": 8,
+        "stop_index": 3,
+        "customer_id": 41,
+        "arrival_time": 452.61,
+        "due_time": 235.0,
+        "lateness": 217.61
+      },
+      {
+        "vehicle_id": 8,
+        "stop_index": 5,
+        "customer_id": 60,
+        "arrival_time": 751.44,
+        "due_time": 629.0,
+        "lateness": 122.44
+      },
+      {
+        "vehicle_id": 8,
+        "stop_index": 6,
+        "customer_id": 40,
+        "arrival_time": 866.44,
+        "due_time": 321.0,
+        "lateness": 545.44
+      },
+      {
+        "vehicle_id": 8,
+        "stop_index": 7,
+        "customer_id": 57,
+        "arrival_time": 972.25,
+        "due_time": 87.0,
+        "lateness": 885.25
+      },
+      {
+        "vehicle_id": 8,
+        "stop_index": 8,
+        "customer_id": 56,
+        "arrival_time": 1072.25,
+        "due_time": 436.0,
+        "lateness": 636.25
+      },
+      {
+        "vehicle_id": 8,
+        "stop_index": 9,
+        "customer_id": 58,
+        "arrival_time": 1164.25,
+        "due_time": 534.0,
+        "lateness": 630.25
+      },
+      {
+        "vehicle_id": 8,
+        "stop_index": 10,
+        "customer_id": 0,
+        "arrival_time": 1299.3,
+        "due_time": 1236.0,
+        "lateness": 63.3
+      },
+      {
+        "vehicle_id": 8,
+        "stop_index": 10,
+        "customer_id": 0,
+        "arrival_time": 1299.3,
+        "due_time": 1236.0,
+        "lateness": 63.3
+      },
+      {
+        "vehicle_id": 9,
+        "stop_index": 5,
+        "customer_id": 64,
+        "arrival_time": 1011.83,
+        "due_time": 693.0,
+        "lateness": 318.83
+      },
+      {
+        "vehicle_id": 9,
+        "stop_index": 6,
+        "customer_id": 68,
+        "arrival_time": 1104.83,
+        "due_time": 777.0,
+        "lateness": 327.83
+      },
+      {
+        "vehicle_id": 9,
+        "stop_index": 7,
+        "customer_id": 61,
+        "arrival_time": 1199.83,
+        "due_time": 610.0,
+        "lateness": 589.83
+      },
+      {
+        "vehicle_id": 9,
+        "stop_index": 8,
+        "customer_id": 72,
+        "arrival_time": 1292.83,
+        "due_time": 505.0,
+        "lateness": 787.83
+      },
+      {
+        "vehicle_id": 9,
+        "stop_index": 9,
+        "customer_id": 62,
+        "arrival_time": 1388.66,
+        "due_time": 317.0,
+        "lateness": 1071.66
+      },
+      {
+        "vehicle_id": 9,
+        "stop_index": 10,
+        "customer_id": 66,
+        "arrival_time": 1481.66,
+        "due_time": 875.0,
+        "lateness": 606.66
+      },
+      {
+        "vehicle_id": 9,
+        "stop_index": 11,
+        "customer_id": 0,
+        "arrival_time": 1588.21,
+        "due_time": 1236.0,
+        "lateness": 352.21
+      },
+      {
+        "vehicle_id": 9,
+        "stop_index": 11,
+        "customer_id": 0,
+        "arrival_time": 1588.21,
+        "due_time": 1236.0,
+        "lateness": 352.21
+      },
+      {
+        "vehicle_id": 10,
+        "stop_index": 3,
+        "customer_id": 65,
+        "arrival_time": 450.07,
+        "due_time": 129.0,
+        "lateness": 321.07
+      },
+      {
+        "vehicle_id": 10,
+        "stop_index": 5,
+        "customer_id": 79,
+        "arrival_time": 864.39,
+        "due_time": 731.0,
+        "lateness": 133.39
+      },
+      {
+        "vehicle_id": 10,
+        "stop_index": 6,
+        "customer_id": 63,
+        "arrival_time": 992.71,
+        "due_time": 218.0,
+        "lateness": 774.71
+      },
+      {
+        "vehicle_id": 10,
+        "stop_index": 7,
+        "customer_id": 70,
+        "arrival_time": 1128.81,
+        "due_time": 456.0,
+        "lateness": 672.81
+      },
+      {
+        "vehicle_id": 10,
+        "stop_index": 8,
+        "customer_id": 73,
+        "arrival_time": 1221.81,
+        "due_time": 551.0,
+        "lateness": 670.81
+      },
+      {
+        "vehicle_id": 10,
+        "stop_index": 9,
+        "customer_id": 77,
+        "arrival_time": 1315.81,
+        "due_time": 643.0,
+        "lateness": 672.81
+      },
+      {
+        "vehicle_id": 10,
+        "stop_index": 10,
+        "customer_id": 0,
+        "arrival_time": 1457.81,
+        "due_time": 1236.0,
+        "lateness": 221.81
+      },
+      {
+        "vehicle_id": 10,
+        "stop_index": 10,
+        "customer_id": 0,
+        "arrival_time": 1457.81,
+        "due_time": 1236.0,
+        "lateness": 221.81
+      }
+    ],
+    "is_fully_feasible": false,
+    "status_summary": "INFEASIBLE SOLUTION: 89 customer time window violations (Total lateness: 50570.0).",
+    "routes_summary": [
+      {
+        "vehicle_id": 1,
+        "customer_count": 10,
+        "route": [
+          0,
+          82,
+          83,
+          86,
+          87,
+          84,
+          90,
+          89,
+          85,
+          88,
+          91,
+          0
+        ],
+        "total_distance": 101.62,
+        "total_demand": 170.0,
+        "is_capacity_feasible": true,
+        "is_time_window_feasible": false,
+        "violations_count": 11,
+        "return_time": 1335.26
+      },
+      {
+        "vehicle_id": 2,
+        "customer_count": 9,
+        "route": [
+          0,
+          94,
+          92,
+          95,
+          98,
+          93,
+          96,
+          100,
+          97,
+          99,
+          0
+        ],
+        "total_distance": 129.65,
+        "total_demand": 190.0,
+        "is_capacity_feasible": true,
+        "is_time_window_feasible": false,
+        "violations_count": 7,
+        "return_time": 1184.04
+      },
+      {
+        "vehicle_id": 3,
+        "customer_count": 10,
+        "route": [
+          0,
+          1,
+          75,
+          2,
+          4,
+          3,
+          5,
+          7,
+          6,
+          9,
+          8,
+          0
+        ],
+        "total_distance": 60.87,
+        "total_demand": 160.0,
+        "is_capacity_feasible": true,
+        "is_time_window_feasible": false,
+        "violations_count": 10,
+        "return_time": 1854.19
+      },
+      {
+        "vehicle_id": 4,
+        "customer_count": 9,
+        "route": [
+          0,
+          12,
+          11,
+          10,
+          14,
+          16,
+          15,
+          17,
+          19,
+          13,
+          0
+        ],
+        "total_distance": 140.59,
+        "total_demand": 190.0,
+        "is_capacity_feasible": true,
+        "is_time_window_feasible": false,
+        "violations_count": 10,
+        "return_time": 1564.51
+      },
+      {
+        "vehicle_id": 5,
+        "customer_count": 10,
+        "route": [
+          0,
+          23,
+          26,
+          18,
+          28,
+          30,
+          21,
+          20,
+          25,
+          27,
+          22,
+          0
+        ],
+        "total_distance": 99.89,
+        "total_demand": 170.0,
+        "is_capacity_feasible": true,
+        "is_time_window_feasible": false,
+        "violations_count": 11,
+        "return_time": 1718.89
+      },
+      {
+        "vehicle_id": 6,
+        "customer_count": 10,
+        "route": [
+          0,
+          24,
+          29,
+          39,
+          34,
+          36,
+          38,
+          32,
+          33,
+          37,
+          35,
+          0
+        ],
+        "total_distance": 120.6,
+        "total_demand": 200.0,
+        "is_capacity_feasible": true,
+        "is_time_window_feasible": false,
+        "violations_count": 8,
+        "return_time": 1452.98
+      },
+      {
+        "vehicle_id": 7,
+        "customer_count": 10,
+        "route": [
+          0,
+          31,
+          52,
+          49,
+          47,
+          51,
+          50,
+          43,
+          46,
+          45,
+          48,
+          0
+        ],
+        "total_distance": 102.03,
+        "total_demand": 130.0,
+        "is_capacity_feasible": true,
+        "is_time_window_feasible": false,
+        "violations_count": 8,
+        "return_time": 1775.49
+      },
+      {
+        "vehicle_id": 8,
+        "customer_count": 9,
+        "route": [
+          0,
+          42,
+          44,
+          41,
+          59,
+          60,
+          40,
+          57,
+          56,
+          58,
+          0
+        ],
+        "total_distance": 150.71,
+        "total_demand": 180.0,
+        "is_capacity_feasible": true,
+        "is_time_window_feasible": false,
+        "violations_count": 8,
+        "return_time": 1299.3
+      },
+      {
+        "vehicle_id": 9,
+        "customer_count": 10,
+        "route": [
+          0,
+          55,
+          54,
+          53,
+          69,
+          64,
+          68,
+          61,
+          72,
+          62,
+          66,
+          0
+        ],
+        "total_distance": 117.67,
+        "total_demand": 150.0,
+        "is_capacity_feasible": true,
+        "is_time_window_feasible": false,
+        "violations_count": 8,
+        "return_time": 1588.21
+      },
+      {
+        "vehicle_id": 10,
+        "customer_count": 9,
+        "route": [
+          0,
+          67,
+          74,
+          65,
+          80,
+          79,
+          63,
+          70,
+          73,
+          77,
+          0
+        ],
+        "total_distance": 215.82,
+        "total_demand": 190.0,
+        "is_capacity_feasible": true,
+        "is_time_window_feasible": false,
+        "violations_count": 8,
+        "return_time": 1457.81
+      },
+      {
+        "vehicle_id": 11,
+        "customer_count": 4,
+        "route": [
+          0,
+          81,
+          78,
+          76,
+          71,
+          0
+        ],
+        "total_distance": 114.44,
+        "total_demand": 80.0,
+        "is_capacity_feasible": true,
+        "is_time_window_feasible": true,
+        "violations_count": 0,
+        "return_time": 474.44
+      }
+    ]
+  },
+  "total_qaoa_subproblems": 31,
+  "quantum_feasible_subproblems": 27,
+  "total_qubits_allocated": 328,
+  "timing_breakdown": {
+    "classical_clustering_seconds": 0.0002,
+    "total_quantum_execution_seconds": 30.5795,
+    "classical_synthesis_seconds": 0.0015,
+    "total_runtime_seconds": 36.7572
+  },
+  "subproblems_summary": [
+    {
+      "subproblem_id": "V1_S1",
+      "vehicle_id": 1,
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "7/500 (1.4%)",
+      "best_order": [
+        82,
+        83,
+        86
+      ],
+      "distance": 70.83,
+      "classical_exact_distance": 70.83,
+      "gap_percent": 0.0,
+      "runtime_seconds": 2.039
+    },
+    {
+      "subproblem_id": "V1_S2",
+      "vehicle_id": 1,
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "37/500 (7.4%)",
+      "best_order": [
+        87,
+        84,
+        90
+      ],
+      "distance": 62.38,
+      "classical_exact_distance": 62.38,
+      "gap_percent": 0.0,
+      "runtime_seconds": 0.162
+    },
+    {
+      "subproblem_id": "V1_S3",
+      "vehicle_id": 1,
+      "n_customers": 4,
+      "n_qubits": 16,
+      "circuit_depth": 33,
+      "feasible_shots": "0/500 (0.0%)",
+      "best_order": [
+        89,
+        85,
+        88,
+        91
+      ],
+      "distance": 60.1,
+      "classical_exact_distance": 60.1,
+      "gap_percent": 0.0,
+      "runtime_seconds": 2.387
+    },
+    {
+      "subproblem_id": "V2_S1",
+      "vehicle_id": 2,
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "15/500 (3.0%)",
+      "best_order": [
+        94,
+        92,
+        95
+      ],
+      "distance": 88.49,
+      "classical_exact_distance": 88.49,
+      "gap_percent": 0.0,
+      "runtime_seconds": 0.158
+    },
+    {
+      "subproblem_id": "V2_S2",
+      "vehicle_id": 2,
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "8/500 (1.6%)",
+      "best_order": [
+        98,
+        93,
+        96
+      ],
+      "distance": 86.14,
+      "classical_exact_distance": 86.14,
+      "gap_percent": 0.0,
+      "runtime_seconds": 0.207
+    },
+    {
+      "subproblem_id": "V2_S3",
+      "vehicle_id": 2,
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "23/500 (4.6%)",
+      "best_order": [
+        100,
+        97,
+        99
+      ],
+      "distance": 83.69,
+      "classical_exact_distance": 83.69,
+      "gap_percent": 0.0,
+      "runtime_seconds": 0.151
+    },
+    {
+      "subproblem_id": "V3_S1",
+      "vehicle_id": 3,
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "1/500 (0.2%)",
+      "best_order": [
+        1,
+        75,
+        2
+      ],
+      "distance": 47.3,
+      "classical_exact_distance": 41.43,
+      "gap_percent": 14.17,
+      "runtime_seconds": 0.159
+    },
+    {
+      "subproblem_id": "V3_S2",
+      "vehicle_id": 3,
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "28/500 (5.6%)",
+      "best_order": [
+        4,
+        3,
+        5
+      ],
+      "distance": 36.24,
+      "classical_exact_distance": 36.24,
+      "gap_percent": 0.0,
+      "runtime_seconds": 0.169
+    },
+    {
+      "subproblem_id": "V3_S3",
+      "vehicle_id": 3,
+      "n_customers": 4,
+      "n_qubits": 16,
+      "circuit_depth": 33,
+      "feasible_shots": "0/500 (0.0%)",
+      "best_order": [
+        7,
+        6,
+        9,
+        8
+      ],
+      "distance": 41.35,
+      "classical_exact_distance": 41.35,
+      "gap_percent": 0.0,
+      "runtime_seconds": 4.629
+    },
+    {
+      "subproblem_id": "V4_S1",
+      "vehicle_id": 4,
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "55/500 (11.0%)",
+      "best_order": [
+        12,
+        11,
+        10
+      ],
+      "distance": 76.71,
+      "classical_exact_distance": 76.71,
+      "gap_percent": 0.0,
+      "runtime_seconds": 0.167
+    },
+    {
+      "subproblem_id": "V4_S2",
+      "vehicle_id": 4,
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "17/500 (3.4%)",
+      "best_order": [
+        14,
+        16,
+        15
+      ],
+      "distance": 82.41,
+      "classical_exact_distance": 82.41,
+      "gap_percent": 0.0,
+      "runtime_seconds": 0.168
+    },
+    {
+      "subproblem_id": "V4_S3",
+      "vehicle_id": 4,
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "15/500 (3.0%)",
+      "best_order": [
+        17,
+        19,
+        13
+      ],
+      "distance": 78.54,
+      "classical_exact_distance": 78.54,
+      "gap_percent": 0.0,
+      "runtime_seconds": 0.149
+    },
+    {
+      "subproblem_id": "V5_S1",
+      "vehicle_id": 5,
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "1/500 (0.2%)",
+      "best_order": [
+        23,
+        26,
+        18
+      ],
+      "distance": 73.72,
+      "classical_exact_distance": 73.72,
+      "gap_percent": 0.0,
+      "runtime_seconds": 0.147
+    },
+    {
+      "subproblem_id": "V5_S2",
+      "vehicle_id": 5,
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "65/500 (13.0%)",
+      "best_order": [
+        28,
+        30,
+        21
+      ],
+      "distance": 41.36,
+      "classical_exact_distance": 41.36,
+      "gap_percent": 0.0,
+      "runtime_seconds": 0.158
+    },
+    {
+      "subproblem_id": "V5_S3",
+      "vehicle_id": 5,
+      "n_customers": 4,
+      "n_qubits": 16,
+      "circuit_depth": 33,
+      "feasible_shots": "2/500 (0.4%)",
+      "best_order": [
+        20,
+        25,
+        27,
+        22
+      ],
+      "distance": 34.55,
+      "classical_exact_distance": 34.45,
+      "gap_percent": 0.31,
+      "runtime_seconds": 4.213
+    },
+    {
+      "subproblem_id": "V6_S1",
+      "vehicle_id": 6,
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "5/500 (1.0%)",
+      "best_order": [
+        24,
+        29,
+        39
+      ],
+      "distance": 80.93,
+      "classical_exact_distance": 80.93,
+      "gap_percent": 0.0,
+      "runtime_seconds": 0.246
+    },
+    {
+      "subproblem_id": "V6_S2",
+      "vehicle_id": 6,
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "6/500 (1.2%)",
+      "best_order": [
+        34,
+        36,
+        38
+      ],
+      "distance": 83.69,
+      "classical_exact_distance": 83.69,
+      "gap_percent": 0.0,
+      "runtime_seconds": 0.264
+    },
+    {
+      "subproblem_id": "V6_S3",
+      "vehicle_id": 6,
+      "n_customers": 4,
+      "n_qubits": 16,
+      "circuit_depth": 33,
+      "feasible_shots": "0/500 (0.0%)",
+      "best_order": [
+        32,
+        33,
+        37,
+        35
+      ],
+      "distance": 83.53,
+      "classical_exact_distance": 83.53,
+      "gap_percent": 0.0,
+      "runtime_seconds": 4.426
+    },
+    {
+      "subproblem_id": "V7_S1",
+      "vehicle_id": 7,
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "29/500 (5.8%)",
+      "best_order": [
+        31,
+        52,
+        49
+      ],
+      "distance": 70.75,
+      "classical_exact_distance": 70.75,
+      "gap_percent": 0.0,
+      "runtime_seconds": 0.229
+    },
+    {
+      "subproblem_id": "V7_S2",
+      "vehicle_id": 7,
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "40/500 (8.0%)",
+      "best_order": [
+        47,
+        51,
+        50
+      ],
+      "distance": 50.14,
+      "classical_exact_distance": 50.14,
+      "gap_percent": 0.0,
+      "runtime_seconds": 0.323
+    },
+    {
+      "subproblem_id": "V7_S3",
+      "vehicle_id": 7,
+      "n_customers": 4,
+      "n_qubits": 16,
+      "circuit_depth": 33,
+      "feasible_shots": "1/500 (0.2%)",
+      "best_order": [
+        43,
+        46,
+        45,
+        48
+      ],
+      "distance": 48.12,
+      "classical_exact_distance": 47.8,
+      "gap_percent": 0.66,
+      "runtime_seconds": 3.762
+    },
+    {
+      "subproblem_id": "V8_S1",
+      "vehicle_id": 8,
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "6/500 (1.2%)",
+      "best_order": [
+        42,
+        44,
+        41
+      ],
+      "distance": 43.84,
+      "classical_exact_distance": 43.84,
+      "gap_percent": 0.0,
+      "runtime_seconds": 0.158
+    },
+    {
+      "subproblem_id": "V8_S2",
+      "vehicle_id": 8,
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "6/500 (1.2%)",
+      "best_order": [
+        59,
+        60,
+        40
+      ],
+      "distance": 91.11,
+      "classical_exact_distance": 91.11,
+      "gap_percent": 0.0,
+      "runtime_seconds": 0.185
+    },
+    {
+      "subproblem_id": "V8_S3",
+      "vehicle_id": 8,
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "23/500 (4.6%)",
+      "best_order": [
+        57,
+        56,
+        58
+      ],
+      "distance": 92.04,
+      "classical_exact_distance": 92.04,
+      "gap_percent": 0.0,
+      "runtime_seconds": 0.587
+    },
+    {
+      "subproblem_id": "V9_S1",
+      "vehicle_id": 9,
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "3/500 (0.6%)",
+      "best_order": [
+        55,
+        54,
+        53
+      ],
+      "distance": 90.62,
+      "classical_exact_distance": 90.62,
+      "gap_percent": 0.0,
+      "runtime_seconds": 0.184
+    },
+    {
+      "subproblem_id": "V9_S2",
+      "vehicle_id": 9,
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "51/500 (10.2%)",
+      "best_order": [
+        69,
+        64,
+        68
+      ],
+      "distance": 45.26,
+      "classical_exact_distance": 45.26,
+      "gap_percent": 0.0,
+      "runtime_seconds": 0.148
+    },
+    {
+      "subproblem_id": "V9_S3",
+      "vehicle_id": 9,
+      "n_customers": 4,
+      "n_qubits": 16,
+      "circuit_depth": 33,
+      "feasible_shots": "10/500 (2.0%)",
+      "best_order": [
+        61,
+        72,
+        62,
+        66
+      ],
+      "distance": 50.74,
+      "classical_exact_distance": 49.24,
+      "gap_percent": 3.05,
+      "runtime_seconds": 2.117
+    },
+    {
+      "subproblem_id": "V10_S1",
+      "vehicle_id": 10,
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "9/500 (1.8%)",
+      "best_order": [
+        67,
+        74,
+        65
+      ],
+      "distance": 39.89,
+      "classical_exact_distance": 39.89,
+      "gap_percent": 0.0,
+      "runtime_seconds": 0.16
+    },
+    {
+      "subproblem_id": "V10_S2",
+      "vehicle_id": 10,
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "2/500 (0.4%)",
+      "best_order": [
+        80,
+        79,
+        63
+      ],
+      "distance": 109.33,
+      "classical_exact_distance": 108.68,
+      "gap_percent": 0.6,
+      "runtime_seconds": 0.164
+    },
+    {
+      "subproblem_id": "V10_S3",
+      "vehicle_id": 10,
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "27/500 (5.4%)",
+      "best_order": [
+        70,
+        73,
+        77
+      ],
+      "distance": 117.52,
+      "classical_exact_distance": 117.52,
+      "gap_percent": 0.0,
+      "runtime_seconds": 0.153
+    },
+    {
+      "subproblem_id": "V11_S1",
+      "vehicle_id": 11,
+      "n_customers": 4,
+      "n_qubits": 16,
+      "circuit_depth": 33,
+      "feasible_shots": "0/500 (0.0%)",
+      "best_order": [
+        81,
+        78,
+        76,
+        71
+      ],
+      "distance": 114.44,
+      "classical_exact_distance": 114.44,
+      "gap_percent": 0.0,
+      "runtime_seconds": 2.412
+    }
+  ],
+  "methodology_notes": "Practical Hybrid Quantum-Classical Architecture: Classical polar sweep partitioned the 100 customers into 11 vehicle clusters (all demand <= 200). Within clusters, 31 genuine QAOA subproblems of 3-4 customers (9-16 qubits) were executed on Qiskit AerSimulator (27/31 sampled valid permutations). Decoded sub-tours were assembled into 100% customer-covering routes."
+}

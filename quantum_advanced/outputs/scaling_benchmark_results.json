@@ -1,0 +1,148 @@
+{
+  "benchmark_title": "Quantum Routing Multi-Instance Scaling Study",
+  "instances_evaluated": [
+    {
+      "customers": 3,
+      "qubits": 9,
+      "hilbert_states": "512",
+      "ram_human": "8.0 KB",
+      "feasible_fraction_str": "1.1719%",
+      "quantum_status": "SUCCESSFULLY_SIMULATED",
+      "circuit_depth": 19,
+      "gate_counts": {
+        "rzz": 30,
+        "h": 9,
+        "rz": 9,
+        "rx": 9,
+        "measure": 9,
+        "barrier": 4
+      },
+      "quantum_runtime_seconds": 2.246,
+      "feasible_sample_rate_pct": 0.75,
+      "qaoa_best_route": [
+        0,
+        3,
+        2,
+        1,
+        0
+      ],
+      "qaoa_best_distance": 41.8061,
+      "classical_optimal_distance": 41.8061,
+      "classical_optimal_route": [
+        0,
+        3,
+        2,
+        1,
+        0
+      ],
+      "classical_runtime_seconds": 0.000779,
+      "optimality_gap_pct": 0.0
+    },
+    {
+      "customers": 4,
+      "qubits": 16,
+      "hilbert_states": "65,536",
+      "ram_human": "1.00 MB",
+      "feasible_fraction_str": "0.0366%",
+      "quantum_status": "SUCCESSFULLY_SIMULATED",
+      "circuit_depth": 33,
+      "gate_counts": {
+        "rzz": 84,
+        "h": 16,
+        "rz": 16,
+        "rx": 16,
+        "measure": 16,
+        "barrier": 4
+      },
+      "quantum_runtime_seconds": 6.153,
+      "feasible_sample_rate_pct": 0.2,
+      "qaoa_best_route": [
+        0,
+        4,
+        2,
+        1,
+        3,
+        0
+      ],
+      "qaoa_best_distance": 43.4464,
+      "classical_optimal_distance": 42.4116,
+      "classical_optimal_route": [
+        0,
+        3,
+        4,
+        2,
+        1,
+        0
+      ],
+      "classical_runtime_seconds": 0.00602,
+      "optimality_gap_pct": 2.44
+    },
+    {
+      "customers": 5,
+      "qubits": 25,
+      "hilbert_states": "33,554,432",
+      "ram_human": "512.00 MB",
+      "feasible_fraction_str": "3.58e-04%",
+      "quantum_status": "SUCCESSFULLY_SIMULATED",
+      "circuit_depth": 51,
+      "gate_counts": {
+        "rzz": 180,
+        "h": 25,
+        "rz": 25,
+        "rx": 25,
+        "measure": 25,
+        "barrier": 4
+      },
+      "quantum_runtime_seconds": 52.398,
+      "feasible_sample_rate_pct": 0.0,
+      "qaoa_best_route": null,
+      "qaoa_best_distance": null,
+      "classical_optimal_distance": 42.4198,
+      "classical_optimal_route": [
+        0,
+        5,
+        3,
+        4,
+        2,
+        1,
+        0
+      ],
+      "classical_runtime_seconds": 0.02855,
+      "optimality_gap_pct": null
+    },
+    {
+      "customers": 6,
+      "qubits": 36,
+      "hilbert_states": "2^36",
+      "ram_human": "1.0 TB",
+      "feasible_fraction_str": "1.05e-06%",
+      "quantum_status": "SAFELY_ABORTED_EXCEEDS_MEMORY",
+      "circuit_depth": null,
+      "gate_counts": null,
+      "quantum_runtime_seconds": null,
+      "feasible_sample_rate_pct": null,
+      "qaoa_best_route": null,
+      "qaoa_best_distance": null,
+      "classical_optimal_distance": 46.1494,
+      "classical_optimal_route": [
+        0,
+        1,
+        2,
+        6,
+        4,
+        3,
+        5,
+        0
+      ],
+      "classical_runtime_seconds": 0.296013,
+      "optimality_gap_pct": null
+    }
+  ],
+  "summary_conclusion": [
+    "N=3 (9 qubits): Fast, 1.17% feasible subspace, exact match to classical optimum.",
+    "N=4 (16 qubits): 1.0 MB RAM, 0.036% feasible subspace, solves in ~12 seconds.",
+    "N=5 (25 qubits): 512 MB RAM, 3.58e-04% feasible subspace, computationally heavy.",
+    "N=6 (36 qubits): Requires 1.0 TB RAM, safely aborted before quantum execution.",
+    "Conclusion: Unconstrained N^2 QUBO routing hits a hard classical simulation barrier at N=6 on standard laptop CPUs."
+  ]
+}
