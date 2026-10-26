@@ -1,0 +1,126 @@
+{
+  "metadata": {
+    "title": "Focused QAOA Routing Demonstration",
+    "framework": "Qiskit 2.x & Qiskit Aer",
+    "timestamp": "2026-10-26 14:14:26",
+    "device": "Local CPU Simulator (AerSimulator)"
+  },
+  "problem": {
+    "name": "Solomon-C101-Subproblem-3Cust",
+    "depot_id": 0,
+    "customer_ids": [
+      1,
+      2,
+      3
+    ],
+    "n_customers": 3,
+    "n_qubits": 9,
+    "vehicle_capacity": 200.0,
+    "coordinates": [
+      [
+        40.0,
+        50.0
+      ],
+      [
+        45.0,
+        68.0
+      ],
+      [
+        45.0,
+        70.0
+      ],
+      [
+        42.0,
+        66.0
+      ]
+    ]
+  },
+  "qubo": {
+    "penalty_multiplier": 35.0,
+    "ising_offset": 276.0271365924188,
+    "pauli_terms": 40
+  },
+  "circuit": {
+    "p_layers": 1,
+    "qubits": 9,
+    "depth": 19,
+    "decomposed_depth": 49,
+    "gate_counts": {
+      "rzz": 30,
+      "h": 9,
+      "rz": 9,
+      "rx": 9,
+      "measure": 9,
+      "barrier": 4
+    }
+  },
+  "optimization": {
+    "optimizer": "COBYLA",
+    "max_iter": 50,
+    "iterations_evaluated": 24,
+    "initial_parameters": [
+      0.05,
+      0.35
+    ],
+    "optimized_parameters": [
+      -0.08921,
+      0.48138
+    ],
+    "initial_energy": 276.2778,
+    "optimized_energy": 156.3154,
+    "runtime_seconds": 0.2201
+  },
+  "sampling": {
+    "simulator": "aer_simulator",
+    "shots": 5000,
+    "feasible_shots": 35,
+    "feasible_rate_percent": 0.7,
+    "optimal_shots": 10,
+    "optimal_rate_percent": 0.2,
+    "unique_bitstrings": 242
+  },
+  "qaoa_best_result": {
+    "route": [
+      0,
+      3,
+      2,
+      1,
+      0
+    ],
+    "distance": 41.8061,
+    "bitstring": "001010100",
+    "matches_exact_classical": true,
+    "vrptw_capacity_passed": true,
+    "vrptw_time_windows_passed": true,
+    "time_window_violations": []
+  },
+  "exact_classical_benchmark": {
+    "optimal_distance": 41.8061,
+    "optimal_routes": [
+      [
+        0,
+        3,
+        2,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        2,
+        3,
+        0
+      ]
+    ],
+    "permutations_evaluated": 6,
+    "solve_time_seconds": 0.00063
+  },
+  "generated_artifacts": [
+    "optimization_convergence.png",
+    "bitstring_distribution.png",
+    "route_comparison.png",
+    "circuit_summary.png",
+    "circuit_diagram.txt",
+    "quantum_results.json"
+  ]
+}
