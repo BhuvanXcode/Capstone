@@ -42,13 +42,29 @@ class DecodedQuantumCandidate:
 class CandidateDecoderAndValidator:
     """Decodes bitstrings from Qiskit and performs structural and VRPTW validation."""
 
-    def __init__(self, instance: ProblemInstance, qubo: RoutingQUBO):
+    def __init__(self, instance: Optional[ProblemInstance] = None, qubo: Optional[RoutingQUBO] = None):
         self.instance = instance
         self.qubo = qubo
-        self.n = instance.n_customers
-        self.n_qubits = instance.n_qubits
-        self.customer_ids = instance.customer_ids
-        self.classical_solver = ExactClassicalSolver(instance)
+
+        if qubo is not None:
+            self.customer_ids = list(qubo.customer_ids)
+            self.n = qubo.n
+            self.n_qubits = qubo.n_qubits
+            self.start_node = getattr(qubo, "start_node", 0)
+            self.end_node = getattr(qubo, "end_node", 0)
+        elif instance is not None:
+            self.customer_ids = list(instance.customer_ids)
+            self.n = instance.n_customers
+            self.n_qubits = instance.n_qubits
+            self.start_node = 0
+            self.end_node = 0
+        else:
+            raise ValueError("Either instance or qubo must be provided to CandidateDecoderAndValidator.")
+
+        if instance is not None:
+            self.classical_solver = ExactClassicalSolver(instance)
+        else:
+            self.classical_solver = None
 
     def bitstring_to_matrix(self, bitstring: str) -> np.ndarray:
         """Convert a Qiskit bitstring into an (N x N) decision variable matrix.
@@ -69,7 +85,7 @@ class CandidateDecoderAndValidator:
         matrix = self.bitstring_to_matrix(bitstring)
         x_flat = np.array([int(bitstring[self.n_qubits - 1 - u]) for u in range(self.n_qubits)], dtype=float)
 
-        qubo_energy = self.qubo.evaluate_bitstring_qubo(x_flat)
+        qubo_energy = self.qubo.evaluate_bitstring_qubo(x_flat) if self.qubo is not None else 0.0
         row_sums = [int(s) for s in matrix.sum(axis=1)]
         col_sums = [int(s) for s in matrix.sum(axis=0)]
 
@@ -99,16 +115,23 @@ class CandidateDecoderAndValidator:
             for p in range(self.n):
                 c_idx = int(np.argmax(matrix[:, p]))
                 perm.append(self.customer_ids[c_idx])
-            route = [0] + perm + [0]
+            route = [self.start_node] + perm + [self.end_node]
 
-            id_to_idx = {0: 0, **{cid: i + 1 for i, cid in enumerate(self.customer_ids)}}
             # Compute route distance
             distance = 0.0
-            for k in range(len(route) - 1):
-                distance += self.instance.distance_matrix[id_to_idx[route[k]], id_to_idx[route[k + 1]]]
+            if self.qubo is not None:
+                for k in range(len(route) - 1):
+                    distance += self.qubo.get_distance(route[k], route[k + 1])
+            elif self.instance is not None:
+                id_to_idx = {0: 0, **{cid: i + 1 for i, cid in enumerate(self.customer_ids)}}
+                for k in range(len(route) - 1):
+                    distance += self.instance.distance_matrix[id_to_idx[route[k]], id_to_idx[route[k + 1]]]
 
-            # Execute separate classical VRPTW validation checks
-            vrptw_eval = self.classical_solver.evaluate_route(perm)
+            # Execute separate classical VRPTW validation checks if classical_solver is available
+            if self.classical_solver is not None and self.start_node == 0 and self.end_node == 0:
+                vrptw_eval = self.classical_solver.evaluate_route(perm)
+            else:
+                vrptw_eval = None
         else:
             report = f"INFEASIBLE MODEL CONSTRAINTS: {'; '.join(issues)}."
             route = None

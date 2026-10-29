@@ -83,6 +83,14 @@ def run_demonstration(
     print(f"  Feasible Subspace: {profile.feasible_routes_count} / {profile.hilbert_dimension:,} ({profile.feasible_percent_str})")
     print(f"  Pre-Flight Status: {profile.status_label}")
 
+    if n_customers == 3:
+        print(f"\n  [ARCHITECTURAL NOTE ON PROBLEM SCALE]")
+        print(f"  • Monolithic Scaling Limit: 100 customers requires 100^2 = 10,000 qubits (> 10^2998 TB RAM).")
+        print(f"    Direct statevector simulation is impossible on laptops, and no 10,000-qubit QPUs exist.")
+        print(f"  • Complete 100-Customer Problem: Solved via our genuine Hybrid QAOA workflow accounting for")
+        print(f"    all 100 customers! Run 'python run_full_dataset.py' or '--full-dataset'.")
+        print(f"  • Focused Subproblem Demonstration: Validates gate-level QAOA execution on 3 customers (9q).")
+
     if not profile.is_safe:
         print(f"\n" + "!" * 75)
         print(f"  [PRE-FLIGHT GATE ABORT] Quantum simulation unsafe on laptop:")
@@ -335,6 +343,7 @@ if __name__ == "__main__":
     parser.add_argument("--benchmark", action="store_true", help="Run multi-instance scaling benchmark across 3, 4, 5, 6 customers")
     parser.add_argument("--full-scale", action="store_true", help="Solve full 100-customer Solomon C101 dataset with classical OR-Tools")
     parser.add_argument("--full-dataset", action="store_true", help="Run complete 100-customer workflow (Classical Baseline vs Hybrid QAOA)")
+    parser.add_argument("--quick", action="store_true", help="Quick smoke test mode for fast verification")
     parser.add_argument("--decompose", action="store_true", help="Run hybrid cluster-first route-second decomposition and encoding analysis")
     parser.add_argument("--estimate", action="store_true", help="Print pre-flight quantum resource scaling table (N=3..100)")
 
@@ -356,7 +365,10 @@ if __name__ == "__main__":
             from .run_full_dataset import run_full_dataset_pipeline
         except ImportError:
             from run_full_dataset import run_full_dataset_pipeline
-        run_full_dataset_pipeline()
+        if args.quick:
+            run_full_dataset_pipeline(time_limit_classical=3, shots=300, max_iter=8, max_quantum_subproblems=3)
+        else:
+            run_full_dataset_pipeline()
 
     elif args.benchmark:
         try:

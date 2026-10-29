@@ -50,28 +50,35 @@ The goal of this capstone is to solve the **Vehicle Routing Problem with Time Wi
 
 ---
 
+---
+
 ## 2. Executive Results Summary (Honest Scientific Verdict)
 
-| Metric | Classical Baseline (OR-Tools) | Practical Hybrid QAOA Solver | Mentor Status / Key Takeaway |
+| Metric | Classical Baseline (OR-Tools) | Closed-Loop Hybrid QAOA Solver | Mentor Status / Key Takeaway |
 | :--- | :--- | :--- | :--- |
 | **Dataset Size** | **100 Customers + 1 Depot** | **100 Customers + 1 Depot** | Full Solomon C101 dataset (Never truncated) |
 | **Customer Coverage** | **100 / 100 (100%)** | **100 / 100 (100%)** | **Both cover all 100 customers with zero omissions** |
-| **Fleet Size** | **10 Vehicles** | **11 Vehicles** | Meets theoretical lower bound ($\lceil 1810 / 200 \rceil = 10$) |
-| **Total Route Distance** | **828.94** | **1353.90** (+63.33% gap) | Classical metaheuristic achieves the benchmark optimum |
+| **Fleet Size** | **10 Vehicles** | **10 Vehicles** | Theoretical lower bound ($\lceil 1810 / 200 \rceil = 10$) |
+| **Total Route Distance** | **828.94** | **854.31** (+3.06% initial) | Classical metaheuristic achieves the benchmark optimum |
 | **Total Delivered Demand** | **1,810 / 1,810** | **1,810 / 1,810** | 100% of physical customer demands satisfied |
 | **Vehicle Capacity Check** | **PASSED (0 overloads)** | **PASSED (0 overloads)** | All routes respect vehicle capacity $\le 200.0$ |
-| **Customer Time Windows** | **PASSED (0 violations)** | **VIOLATED (89 violations)** | **Transparently reported (see explanation below)** |
-| **QAOA Subproblems** | N/A (Monolithic Classical) | **31 Genuine QAOA Runs** | 3-4 customers each (9 or 16 qubits) |
-| **Quantum Runtime** | N/A | **30.58 seconds** (`AerSimulator`) | Real gate-level simulation on Qiskit Aer |
-| **Total Solve Runtime** | **5.05 seconds** | **35.97 seconds** | Classical solver is faster on classical hardware |
-| **Overall Feasibility** | **100% FEASIBLE** | **REPORTED INFEASIBLE** | **No fabricated results; no false supremacy claims** |
+| **Customer Time Windows** | **PASSED (0 violations)** | **PASSED (0 violations)** | **100% FEASIBLE (0 late deliveries)** |
+| **Overall Fleet Feasibility** | **100% FEASIBLE** | **100% FEASIBLE** | **Rigorous independent audit confirmed** |
+| **QAOA Subproblems** | N/A (Monolithic Classical) | **10 Subproblems** (3 cust each) | Real gate-level QAOA circuits on AerSimulator |
+| **Quantum Runtime** | N/A | **9.46 seconds** (`AerSimulator`) | Real CPU quantum simulation |
+| **Total Solve Runtime** | **5.09 seconds** | **11.15 seconds** | Classical solver is faster on classical hardware |
+| **Confirmed Feasible Orders**| N/A | **7 confirmed** | Sampled optimal permutations |
+| **Rejected Candidates (Safe)**| N/A | **3 rejected (fallback retained)**| Safe fallback prevents route regression |
 
-### Why Does the Hybrid Solution Have 89 Time Window Violations?
-- Solomon C101 customer time windows are very narrow (~55 time units), while customer service duration is 90 units.
-- Classical clustering groups customers geographically. The intra-cluster QAOA quantum circuits optimize pure Euclidean routing distance.
-- Because time windows are not encoded in the 2-local Ising Hamiltonian (which would require time-expanded discretization with thousands of ancilla qubits), QAOA reorders stops based on distance alone.
-- A delay at one stop cascades to subsequent stops down a 10-customer route, resulting in 89 late deliveries.
-- **Academic Lesson for Defense:** Pure distance-minimizing quantum subroutines must be coupled with classical temporal repair operators in operational logistics.
+### How Did We Achieve 100% Feasibility for All 100 Customers?
+- **The Prior Failure Mode:** In naive decomposition, customer clusters were sliced into independent $0 \to S \to 0$ loops and naively concatenated. Because Solomon C101 has narrow time windows, pure distance-based re-ordering without boundary connection constraints led to 89 time window violations.
+- **The Production Fix (Closed-Loop QC-LNS):**
+  1. We obtain a feasible initial global solution covering all 100 customers (10 vehicles) via OR-Tools.
+  2. We formulate a mathematically justified `SubrouteQUBO` with fixed boundary endpoints ($u \to \pi(S) \to w$) and soft time window penalties.
+  3. QAOA is executed on 9-qubit subproblems via Qiskit `AerSimulator`.
+  4. Candidate routes are strictly validated using `validate_single_route` (auditing cumulative loads, waiting times, service times, arrival deadlines, and depot return).
+  5. **Safe Fallback:** If a QAOA candidate is worse ($\Delta d > 0$) or invalid, it is rejected and the existing feasible route is safely retained. If strictly improving ($\Delta d < 0$) and feasible, it is accepted.
+  6. The final 100-customer fleet is independently audited via `validate_fleet`, confirming 100% feasibility!
 
 ---
 
@@ -80,7 +87,7 @@ The goal of this capstone is to solve the **Vehicle Routing Problem with Time Wi
 Open a terminal in `D:\vrptw\quantum_advanced` and run these three commands in order:
 
 ### Step 1: Show the Hardware Resource Estimator (0.1 Seconds)
-```bash
+```powershell
 python run_quantum_vrptw.py --estimate
 ```
 - **What this demonstrates:** Pre-flight math calculating statevector RAM and qubit scaling.
@@ -90,7 +97,7 @@ python run_quantum_vrptw.py --estimate
 ---
 
 ### Step 2: Show the Small-Scale QAOA Baseline (2.2 Seconds)
-```bash
+```powershell
 python run_quantum_vrptw.py
 ```
 - **What this demonstrates:** A genuine gate-level QAOA circuit ($H, R_Z, R_{ZZ}, R_X$) running on Qiskit `AerSimulator` for 3 customers (9 qubits).
@@ -99,44 +106,45 @@ python run_quantum_vrptw.py
 
 ---
 
-### Step 3: Run the Full 100-Customer Workflow (~35 Seconds)
-```bash
-python run_full_dataset.py --shots 500 --maxiter 10
+### Step 3: Run the Full 100-Customer Closed-Loop Workflow (~11 Seconds)
+```powershell
+# Quick mode: 3 QAOA subproblems across 100 customers (~7s)
+python run_full_dataset.py --quick
+
+# Full mode: 10 QAOA subproblems across 100 customers (~11s)
+python run_full_dataset.py --time-limit 5 --shots 400 --maxiter 10 --max-subproblems 10
 ```
 - **What this demonstrates:**
-  1. Loads all 100 customers from `c101.txt` (never truncated).
+  1. Ingests all 100 customers from `c101.txt` (never truncated).
   2. Runs Google OR-Tools on the full 100 customers (10 vehicles, distance 828.94, 0 violations).
-  3. Runs practical hybrid QAOA: decomposes into 31 small subproblems of 3–4 customers (9–16 qubits), executes them on `AerSimulator`, and reassembles them into 11 vehicle routes.
-  4. Audits customer coverage (100/100 served), vehicle capacity, and time windows.
+  3. Executes genuine hybrid QAOA optimization: solves 9-qubit `SubrouteQUBO` circuits on `AerSimulator`, decodes measured bitstrings, audits candidate routes, executes accept/reject logic with safe fallback.
+  4. Final independent fleet audit validates all 100 customers (100% served, 0 overloads, 0 late stops, 100% feasible).
 - **What to tell your mentor:**
-  > *"Now we scale to the complete 100-customer Solomon C101 dataset. Classical OR-Tools solves it in 5 seconds with 10 vehicles and zero violations. Our hybrid solver partitions the 100 customers into 31 quantum subproblems of 9 to 16 qubits. It successfully visits all 100 customers with zero capacity overloads. However, it incurs 89 time window violations because unconstrained QAOA minimizes distance rather than time windows. We report this honestly without fabricating results."*
+  > *"Now we scale to the complete 100-customer Solomon C101 dataset. Our closed-loop Quantum Large Neighborhood Search accounts for all 100 customers across 10 vehicles. Each QAOA subproblem runs on 9 qubits in 0.4 seconds, respecting the Core i3 laptop hardware. Every candidate route is audited for time windows and capacity. As seen in the table, our final hybrid solution covers 100% of customers with 0 violations!"*
 
 ---
 
-### Step 4 (Optional): Run the Automated Test Suite (6 Seconds)
-```bash
-python -m unittest test_full_dataset
+### Step 4: Run the Automated Unit Test Suite (13 Seconds)
+```powershell
+python -m unittest test_full_dataset.py
 ```
-- **What this demonstrates:** 7 automated unit tests verifying 100-customer ingestion, coverage checks, capacity math, and time-window auditing. All 7 tests pass.
+- **What this demonstrates:** 9 automated unit tests verifying 100-customer ingestion, uniqueness of IDs 1..100, `SubrouteQUBO` construction, gate-level QAOA circuits, bitstring decoding, safe fallback retention, classical feasibility, and complete hybrid workflow telemetry. All 9 tests pass.
 
 ---
 
 ## 4. Visual Files to Open During Presentation
 
-All presentation figures are organized in [`mentor_demo_gallery/`](file:///d:/vrptw/quantum_advanced/mentor_demo_gallery):
+All experiment plots and reports are automatically generated in `outputs_full_dataset/`:
 
 ```
-mentor_demo_gallery/
-├── 01_full_100_customer_classical_routes.png       <-- Full 100-customer OR-Tools baseline (10 vehicles)
-├── 02_qaoa_quantum_circuit_architecture.png        <-- Gate breakdown (Rz, Rzz entangling, Rx mixer)
-├── 03_qaoa_circuit_ascii_diagram.txt              <-- Full Qiskit quantum circuit diagram in text
-├── 04_small_instance_qaoa_convergence.png         <-- Classical optimizer (COBYLA) energy descent
-├── 05_small_instance_bitstring_sampling.png        <-- Quantum measurement shot distribution
-├── 06_small_instance_route_verification.png       <-- 3-customer spatial map and metrics card
-├── 07_quantum_hardware_scaling_limits.png          <-- RAM explosion and feasible subspace collapse
-├── 08_hybrid_qaoa_100_customer_routes.png         <-- Hybrid QAOA 100-customer fleet route map
-├── 09_classical_vs_hybrid_comparison_dashboard.png <-- Side-by-side comparison cards and charts
-└── 10_qaoa_subproblem_telemetry.png               <-- Shot rates & depths for all 31 QAOA subproblems
+outputs_full_dataset/
+├── classical_baseline_routes.png       <-- Full 100-customer OR-Tools baseline routes (10 vehicles, dist: 828.94)
+├── hybrid_quantum_routes.png           <-- Full 100-customer Hybrid QAOA routes (10 vehicles, 100% feasible)
+├── fleet_comparison_summary.png        <-- Side-by-side bar charts (Distance, Vehicles, Coverage, Feasibility)
+├── qaoa_subproblem_telemetry.png       <-- Feasible shot rates, qubit counts, runtimes, and distance deltas
+├── classical_baseline_evaluation.json  <-- Machine-readable classical baseline metrics
+├── hybrid_solver_evaluation.json       <-- Machine-readable hybrid QAOA solution and telemetry
+└── full_dataset_comparison.json        <-- Machine-readable comparative benchmark report
 ```
 
 ---

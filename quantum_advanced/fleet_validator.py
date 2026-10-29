@@ -160,6 +160,137 @@ class FleetValidator:
             self._dist_cache[pair] = d
         return self._dist_cache[pair]
 
+    def validate_single_route(self, route: List[int], vehicle_id: int = 1) -> VehicleRouteEvaluation:
+        """Validate an individual vehicle route for capacity, duration, and time-window constraints.
+        
+        Args:
+            route: List of customer IDs, either [c1, ..., cm] or [0, c1, ..., cm, 0].
+            vehicle_id: Identifier for reporting.
+            
+        Returns:
+            VehicleRouteEvaluation with stop schedules, feasibility flag, and lateness metrics.
+        """
+        cust_ids = [c for c in route if c != 0]
+        norm_route = [0] + cust_ids + [0]
+        route_demand = sum(self.customers[c]["demand"] for c in cust_ids)
+        is_cap_ok = (route_demand <= self.capacity)
+        overload = max(0.0, route_demand - self.capacity)
+
+        schedule: List[StopSchedule] = []
+        curr_time = 0.0
+        route_dist = 0.0
+        route_wait = 0.0
+        route_service = 0.0
+        route_violations = []
+        cum_load = 0.0
+
+        # Depot departure
+        schedule.append(StopSchedule(
+            stop_index=0,
+            customer_id=0,
+            arrival_time=0.0,
+            ready_time=self.depot["ready_time"],
+            due_time=self.depot["due_time"],
+            waiting_time=0.0,
+            service_start=0.0,
+            service_time=0.0,
+            departure_time=0.0,
+            is_time_window_feasible=True,
+            lateness=0.0,
+            demand=0.0,
+            cumulative_load=0.0,
+        ))
+
+        for k in range(len(norm_route) - 1):
+            u, v = norm_route[k], norm_route[k + 1]
+            leg_dist = self.get_distance(u, v)
+            route_dist += leg_dist
+            arrival_time = curr_time + leg_dist
+
+            v_info = self.customers[v]
+            r_time = v_info["ready_time"]
+            d_time = v_info["due_time"]
+            s_time = v_info["service_time"]
+            dem = v_info["demand"]
+            cum_load += dem
+
+            # Early arrival -> wait until ready time
+            wait_time = max(0.0, r_time - arrival_time)
+            service_start = arrival_time + wait_time
+
+            # Lateness check
+            lateness = max(0.0, arrival_time - d_time)
+            is_tw_ok = (lateness <= 1e-4)
+
+            if not is_tw_ok:
+                violation_record = {
+                    "vehicle_id": vehicle_id,
+                    "stop_index": k + 1,
+                    "customer_id": v,
+                    "arrival_time": round(arrival_time, 2),
+                    "due_time": round(d_time, 2),
+                    "lateness": round(lateness, 2),
+                }
+                route_violations.append(violation_record)
+
+            departure_time = service_start + s_time
+            curr_time = departure_time
+            route_wait += wait_time
+            route_service += s_time
+
+            schedule.append(StopSchedule(
+                stop_index=k + 1,
+                customer_id=v,
+                arrival_time=round(arrival_time, 2),
+                ready_time=r_time,
+                due_time=d_time,
+                waiting_time=round(wait_time, 2),
+                service_start=round(service_start, 2),
+                service_time=s_time,
+                departure_time=round(departure_time, 2),
+                is_time_window_feasible=is_tw_ok,
+                lateness=round(lateness, 2),
+                demand=dem,
+                cumulative_load=cum_load,
+            ))
+
+        # Depot return check
+        depot_return_arrival = schedule[-1].arrival_time
+        is_depot_return_ok = (depot_return_arrival <= self.depot["due_time"] + 1e-4)
+        if not is_depot_return_ok:
+            depot_lateness = depot_return_arrival - self.depot["due_time"]
+            violation_record = {
+                "vehicle_id": vehicle_id,
+                "stop_index": len(norm_route) - 1,
+                "customer_id": 0,
+                "arrival_time": round(depot_return_arrival, 2),
+                "due_time": round(self.depot["due_time"], 2),
+                "lateness": round(depot_lateness, 2),
+            }
+            route_violations.append(violation_record)
+
+        return VehicleRouteEvaluation(
+            vehicle_id=vehicle_id,
+            route=norm_route,
+            customer_ids=cust_ids,
+            total_distance=round(route_dist, 4),
+            total_demand=route_demand,
+            capacity_limit=self.capacity,
+            is_capacity_feasible=is_cap_ok,
+            capacity_overload=round(overload, 2),
+            schedule=schedule,
+            total_waiting_time=round(route_wait, 2),
+            total_service_time=round(route_service, 2),
+            total_travel_time=round(route_dist, 2),
+            total_duration=round(curr_time, 2),
+            return_to_depot_time=round(depot_return_arrival, 2),
+            is_depot_return_feasible=is_depot_return_ok,
+            is_time_window_feasible=(len(route_violations) == 0),
+            time_window_violations_count=len(route_violations),
+            violations_detail=route_violations,
+            is_route_feasible=is_cap_ok and (len(route_violations) == 0),
+        )
+
     def validate_fleet(self, routes: List[List[int]], solution_name: str = "Solution") -> FleetEvaluation:
         """Thoroughly audit a collection of vehicle routes.
         

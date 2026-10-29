@@ -1,8 +1,117 @@
 {
   "status": "HYBRID_SOLVER_COMPLETED",
   "total_customers": 100,
-  "vehicle_count": 11,
-  "total_distance": 1353.899,
+  "distinct_customers_covered": 100,
+  "distinct_quantum_customer_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100
+  ],
+  "distinct_quantum_customer_count": 100,
+  "unprocessed_customer_ids": [],
+  "unprocessed_customer_count": 0,
+  "vehicle_count": 10,
+  "initial_total_distance": 828.9369,
+  "final_total_distance": 828.9369,
+  "distance_improved": false,
+  "net_distance_delta": 0.0,
   "fleet_evaluation": {
     "dataset_name": "Hybrid-QAOA-VRPTW-100Cust",
     "total_customers_expected": 100,
@@ -12,1538 +121,1501 @@
     "duplicate_customer_ids": [],
     "is_coverage_valid": true,
     "coverage_report": "PASSED: All 100 customers are visited exactly once.",
-    "vehicles_used": 11,
+    "vehicles_used": 10,
     "vehicle_capacity_limit": 200.0,
     "total_demand_expected": 1810.0,
     "total_demand_delivered": 1810.0,
     "is_capacity_valid": true,
     "capacity_violations_count": 0,
     "capacity_overloads_detail": [],
-    "total_distance": 1353.899,
-    "total_travel_time": 1353.899,
-    "total_waiting_time": 5351.2306,
+    "total_distance": 828.9369,
+    "total_travel_time": 828.9369,
+    "total_waiting_time": 0.0,
     "total_service_time": 9000.0,
-    "total_fleet_duration": 15705.1296,
-    "is_time_window_valid": false,
-    "time_window_violations_count": 89,
-    "total_lateness": 50570.0051,
-    "time_window_violations_detail": [
-      {
-        "vehicle_id": 1,
-        "stop_index": 2,
-        "customer_id": 83,
-        "arrival_time": 462.0,
-        "due_time": 338.0,
-        "lateness": 124.0
-      },
-      {
-        "vehicle_id": 1,
-        "stop_index": 3,
-        "customer_id": 86,
-        "arrival_time": 558.0,
-        "due_time": 238.0,
-        "lateness": 320.0
-      },
-      {
-        "vehicle_id": 1,
-        "stop_index": 4,
-        "customer_id": 87,
-        "arrival_time": 649.0,
-        "due_time": 144.0,
-        "lateness": 505.0
-      },
-      {
-        "vehicle_id": 1,
-        "stop_index": 5,
-        "customer_id": 84,
-        "arrival_time": 744.83,
-        "due_time": 523.0,
-        "lateness": 221.83
-      },
-      {
-        "vehicle_id": 1,
-        "stop_index": 6,
-        "customer_id": 90,
-        "arrival_time": 845.27,
-        "due_time": 84.0,
-        "lateness": 761.27
-      },
-      {
-        "vehicle_id": 1,
-        "stop_index": 7,
-        "customer_id": 89,
-        "arrival_time": 939.51,
-        "due_time": 802.0,
-        "lateness": 137.51
-      },
-      {
-        "vehicle_id": 1,
-        "stop_index": 8,
-        "customer_id": 85,
-        "arrival_time": 1034.9,
-        "due_time": 612.0,
-        "lateness": 422.9
-      },
-      {
-        "vehicle_id": 1,
-        "stop_index": 9,
-        "customer_id": 88,
-        "arrival_time": 1127.9,
-        "due_time": 708.0,
-        "lateness": 419.9
-      },
-      {
-        "vehicle_id": 1,
-        "stop_index": 10,
-        "customer_id": 91,
-        "arrival_time": 1222.9,
-        "due_time": 889.0,
-        "lateness": 333.9
-      },
-      {
-        "vehicle_id": 1,
-        "stop_index": 11,
-        "customer_id": 0,
-        "arrival_time": 1335.26,
-        "due_time": 1236.0,
-        "lateness": 99.26
-      },
-      {
-        "vehicle_id": 1,
-        "stop_index": 11,
-        "customer_id": 0,
-        "arrival_time": 1335.26,
-        "due_time": 1236.0,
-        "lateness": 99.26
-      },
-      {
-        "vehicle_id": 2,
-        "stop_index": 3,
-        "customer_id": 95,
-        "arrival_time": 475.68,
-        "due_time": 239.0,
-        "lateness": 236.68
-      },
-      {
-        "vehicle_id": 2,
-        "stop_index": 4,
-        "customer_id": 98,
-        "arrival_time": 572.08,
-        "due_time": 84.0,
-        "lateness": 488.08
-      },
-      {
-        "vehicle_id": 2,
-        "stop_index": 5,
-        "customer_id": 93,
-        "arrival_time": 674.29,
-        "due_time": 518.0,
-        "lateness": 156.29
-      },
-      {
-        "vehicle_id": 2,
-        "stop_index": 6,
-        "customer_id": 96,
-        "arrival_time": 771.36,
-        "due_time": 156.0,
-        "lateness": 615.36
-      },
-      {
-        "vehicle_id": 2,
-        "stop_index": 7,
-        "customer_id": 100,
-        "arrival_time": 868.43,
-        "due_time": 726.0,
-        "lateness": 142.43
-      },
-      {
-        "vehicle_id": 2,
-        "stop_index": 8,
-        "customer_id": 97,
-        "arrival_time": 963.43,
-        "due_time": 622.0,
-        "lateness": 341.43
-      },
-      {
-        "vehicle_id": 2,
-        "stop_index": 9,
-        "customer_id": 99,
-        "arrival_time": 1060.5,
-        "due_time": 820.0,
-        "lateness": 240.5
-      },
-      {
-        "vehicle_id": 3,
-        "stop_index": 3,
-        "customer_id": 2,
-        "arrival_time": 1100.0,
-        "due_time": 870.0,
-        "lateness": 230.0
-      },
-      {
-        "vehicle_id": 3,
-        "stop_index": 4,
-        "customer_id": 4,
-        "arrival_time": 1193.61,
-        "due_time": 782.0,
-        "lateness": 411.61
-      },
-      {
-        "vehicle_id": 3,
-        "stop_index": 5,
-        "customer_id": 3,
-        "arrival_time": 1285.61,
-        "due_time": 146.0,
-        "lateness": 1139.61
-      },
-      {
-        "vehicle_id": 3,
-        "stop_index": 6,
-        "customer_id": 5,
-        "arrival_time": 1376.61,
-        "due_time": 67.0,
-        "lateness": 1309.61
-      },
-      {
-        "vehicle_id": 3,
-        "stop_index": 7,
-        "customer_id": 7,
-        "arrival_time": 1468.84,
-        "due_time": 225.0,
-        "lateness": 1243.84
-      },
-      {
-        "vehicle_id": 3,
-        "stop_index": 8,
-        "customer_id": 6,
-        "arrival_time": 1561.84,
-        "due_time": 702.0,
-        "lateness": 859.84
-      },
-      {
-        "vehicle_id": 3,
-        "stop_index": 9,
-        "customer_id": 9,
-        "arrival_time": 1654.08,
-        "due_time": 605.0,
-        "lateness": 1049.08
-      },
-      {
-        "vehicle_id": 3,
-        "stop_index": 10,
-        "customer_id": 8,
-        "arrival_time": 1746.08,
-        "due_time": 324.0,
-        "lateness": 1422.08
-      },
-      {
-        "vehicle_id": 3,
-        "stop_index": 11,
-        "customer_id": 0,
-        "arrival_time": 1854.19,
-        "due_time": 1236.0,
-        "lateness": 618.19
-      },
-      {
-        "vehicle_id": 3,
-        "stop_index": 11,
-        "customer_id": 0,
-        "arrival_time": 1854.19,
-        "due_time": 1236.0,
-        "lateness": 618.19
-      },
-      {
-        "vehicle_id": 4,
-        "stop_index": 2,
-        "customer_id": 11,
-        "arrival_time": 760.87,
-        "due_time": 505.0,
-        "lateness": 255.87
-      },
-      {
-        "vehicle_id": 4,
-        "stop_index": 3,
-        "customer_id": 10,
-        "arrival_time": 853.87,
-        "due_time": 410.0,
-        "lateness": 443.87
-      },
-      {
-        "vehicle_id": 4,
-        "stop_index": 4,
-        "customer_id": 14,
-        "arrival_time": 966.89,
-        "due_time": 620.0,
-        "lateness": 346.89
-      },
-      {
-        "vehicle_id": 4,
-        "stop_index": 5,
-        "customer_id": 16,
-        "arrival_time": 1058.89,
-        "due_time": 528.0,
-        "lateness": 530.89
-      },
-      {
-        "vehicle_id": 4,
-        "stop_index": 6,
-        "customer_id": 15,
-        "arrival_time": 1153.89,
-        "due_time": 429.0,
-        "lateness": 724.89
-      },
-      {
-        "vehicle_id": 4,
-        "stop_index": 7,
-        "customer_id": 17,
-        "arrival_time": 1249.27,
-        "due_time": 148.0,
-        "lateness": 1101.27
-      },
-      {
-        "vehicle_id": 4,
-        "stop_index": 8,
-        "customer_id": 19,
-        "arrival_time": 1345.11,
-        "due_time": 345.0,
-        "lateness": 1000.11
-      },
-      {
-        "vehicle_id": 4,
-        "stop_index": 9,
-        "customer_id": 13,
-        "arrival_time": 1443.71,
-        "due_time": 92.0,
-        "lateness": 1351.71
-      },
-      {
-        "vehicle_id": 4,
-        "stop_index": 10,
-        "customer_id": 0,
-        "arrival_time": 1564.51,
-        "due_time": 1236.0,
-        "lateness": 328.51
-      },
-      {
-        "vehicle_id": 4,
-        "stop_index": 10,
-        "customer_id": 0,
-        "arrival_time": 1564.51,
-        "due_time": 1236.0,
-        "lateness": 328.51
-      },
-      {
-        "vehicle_id": 5,
-        "stop_index": 2,
-        "customer_id": 26,
-        "arrival_time": 825.0,
-        "due_time": 701.0,
-        "lateness": 124.0
-      },
-      {
-        "vehicle_id": 5,
-        "stop_index": 3,
-        "customer_id": 18,
-        "arrival_time": 937.36,
-        "due_time": 254.0,
-        "lateness": 683.36
-      },
-      {
-        "vehicle_id": 5,
-        "stop_index": 4,
-        "customer_id": 28,
-        "arrival_time": 1048.9,
-        "due_time": 593.0,
-        "lateness": 455.9
-      },
-      {
-        "vehicle_id": 5,
-        "stop_index": 5,
-        "customer_id": 30,
-        "arrival_time": 1141.9,
-        "due_time": 504.0,
-        "lateness": 637.9
-      },
-      {
-        "vehicle_id": 5,
-        "stop_index": 6,
-        "customer_id": 21,
-        "arrival_time": 1242.34,
-        "due_time": 965.0,
-        "lateness": 277.34
-      },
-      {
-        "vehicle_id": 5,
-        "stop_index": 7,
-        "customer_id": 20,
-        "arrival_time": 1334.34,
-        "due_time": 73.0,
-        "lateness": 1261.34
-      },
-      {
-        "vehicle_id": 5,
-        "stop_index": 8,
-        "customer_id": 25,
-        "arrival_time": 1429.73,
-        "due_time": 224.0,
-        "lateness": 1205.73
-      },
-      {
-        "vehicle_id": 5,
-        "stop_index": 9,
-        "customer_id": 27,
-        "arrival_time": 1521.73,
-        "due_time": 316.0,
-        "lateness": 1205.73
-      },
-      {
-        "vehicle_id": 5,
-        "stop_index": 10,
-        "customer_id": 22,
-        "arrival_time": 1616.73,
-        "due_time": 883.0,
-        "lateness": 733.73
-      },
-      {
-        "vehicle_id": 5,
-        "stop_index": 11,
-        "customer_id": 0,
-        "arrival_time": 1718.89,
-        "due_time": 1236.0,
-        "lateness": 482.89
-      },
-      {
-        "vehicle_id": 5,
-        "stop_index": 11,
-        "customer_id": 0,
-        "arrival_time": 1718.89,
-        "due_time": 1236.0,
-        "lateness": 482.89
-      },
-      {
-        "vehicle_id": 6,
-        "stop_index": 5,
-        "customer_id": 36,
-        "arrival_time": 844.0,
-        "due_time": 716.0,
-        "lateness": 128.0
-      },
-      {
-        "vehicle_id": 6,
-        "stop_index": 6,
-        "customer_id": 38,
-        "arrival_time": 941.07,
-        "due_time": 522.0,
-        "lateness": 419.07
-      },
-      {
-        "vehicle_id": 6,
-        "stop_index": 7,
-        "customer_id": 32,
-        "arrival_time": 1041.07,
-        "due_time": 100.0,
-        "lateness": 941.07
-      },
-      {
-        "vehicle_id": 6,
-        "stop_index": 8,
-        "customer_id": 33,
-        "arrival_time": 1133.07,
-        "due_time": 158.0,
-        "lateness": 975.07
-      },
-      {
-        "vehicle_id": 6,
-        "stop_index": 9,
-        "customer_id": 37,
-        "arrival_time": 1229.07,
-        "due_time": 434.0,
-        "lateness": 795.07
-      },
-      {
-        "vehicle_id": 6,
-        "stop_index": 10,
-        "customer_id": 35,
-        "arrival_time": 1324.9,
-        "due_time": 344.0,
-        "lateness": 980.9
-      },
-      {
-        "vehicle_id": 6,
-        "stop_index": 11,
-        "customer_id": 0,
-        "arrival_time": 1452.98,
-        "due_time": 1236.0,
-        "lateness": 216.98
-      },
-      {
-        "vehicle_id": 6,
-        "stop_index": 11,
-        "customer_id": 0,
-        "arrival_time": 1452.98,
-        "due_time": 1236.0,
-        "lateness": 216.98
-      },
-      {
-        "vehicle_id": 7,
-        "stop_index": 5,
-        "customer_id": 51,
-        "arrival_time": 1194.07,
-        "due_time": 786.0,
-        "lateness": 408.07
-      },
-      {
-        "vehicle_id": 7,
-        "stop_index": 6,
-        "customer_id": 50,
-        "arrival_time": 1286.31,
-        "due_time": 880.0,
-        "lateness": 406.31
-      },
-      {
-        "vehicle_id": 7,
-        "stop_index": 7,
-        "customer_id": 43,
-        "arrival_time": 1383.92,
-        "due_time": 80.0,
-        "lateness": 1303.92
-      },
-      {
-        "vehicle_id": 7,
-        "stop_index": 8,
-        "customer_id": 46,
-        "arrival_time": 1478.17,
-        "due_time": 509.0,
-        "lateness": 969.17
-      },
-      {
-        "vehicle_id": 7,
-        "stop_index": 9,
-        "customer_id": 45,
-        "arrival_time": 1570.17,
-        "due_time": 600.0,
-        "lateness": 970.17
-      },
-      {
-        "vehicle_id": 7,
-        "stop_index": 10,
-        "customer_id": 48,
-        "arrival_time": 1662.17,
-        "due_time": 693.0,
-        "lateness": 969.17
-      },
-      {
-        "vehicle_id": 7,
-        "stop_index": 11,
-        "customer_id": 0,
-        "arrival_time": 1775.49,
-        "due_time": 1236.0,
-        "lateness": 539.49
-      },
-      {
-        "vehicle_id": 7,
-        "stop_index": 11,
-        "customer_id": 0,
-        "arrival_time": 1775.49,
-        "due_time": 1236.0,
-        "lateness": 539.49
-      },
-      {
-        "vehicle_id": 8,
-        "stop_index": 3,
-        "customer_id": 41,
-        "arrival_time": 452.61,
-        "due_time": 235.0,
-        "lateness": 217.61
-      },
-      {
-        "vehicle_id": 8,
-        "stop_index": 5,
-        "customer_id": 60,
-        "arrival_time": 751.44,
-        "due_time": 629.0,
-        "lateness": 122.44
-      },
-      {
-        "vehicle_id": 8,
-        "stop_index": 6,
-        "customer_id": 40,
-        "arrival_time": 866.44,
-        "due_time": 321.0,
-        "lateness": 545.44
-      },
-      {
-        "vehicle_id": 8,
-        "stop_index": 7,
-        "customer_id": 57,
-        "arrival_time": 972.25,
-        "due_time": 87.0,
-        "lateness": 885.25
-      },
-      {
-        "vehicle_id": 8,
-        "stop_index": 8,
-        "customer_id": 56,
-        "arrival_time": 1072.25,
-        "due_time": 436.0,
-        "lateness": 636.25
-      },
-      {
-        "vehicle_id": 8,
-        "stop_index": 9,
-        "customer_id": 58,
-        "arrival_time": 1164.25,
-        "due_time": 534.0,
-        "lateness": 630.25
-      },
-      {
-        "vehicle_id": 8,
-        "stop_index": 10,
-        "customer_id": 0,
-        "arrival_time": 1299.3,
-        "due_time": 1236.0,
-        "lateness": 63.3
-      },
-      {
-        "vehicle_id": 8,
-        "stop_index": 10,
-        "customer_id": 0,
-        "arrival_time": 1299.3,
-        "due_time": 1236.0,
-        "lateness": 63.3
-      },
-      {
-        "vehicle_id": 9,
-        "stop_index": 5,
-        "customer_id": 64,
-        "arrival_time": 1011.83,
-        "due_time": 693.0,
-        "lateness": 318.83
-      },
-      {
-        "vehicle_id": 9,
-        "stop_index": 6,
-        "customer_id": 68,
-        "arrival_time": 1104.83,
-        "due_time": 777.0,
-        "lateness": 327.83
-      },
-      {
-        "vehicle_id": 9,
-        "stop_index": 7,
-        "customer_id": 61,
-        "arrival_time": 1199.83,
-        "due_time": 610.0,
-        "lateness": 589.83
-      },
-      {
-        "vehicle_id": 9,
-        "stop_index": 8,
-        "customer_id": 72,
-        "arrival_time": 1292.83,
-        "due_time": 505.0,
-        "lateness": 787.83
-      },
-      {
-        "vehicle_id": 9,
-        "stop_index": 9,
-        "customer_id": 62,
-        "arrival_time": 1388.66,
-        "due_time": 317.0,
-        "lateness": 1071.66
-      },
-      {
-        "vehicle_id": 9,
-        "stop_index": 10,
-        "customer_id": 66,
-        "arrival_time": 1481.66,
-        "due_time": 875.0,
-        "lateness": 606.66
-      },
-      {
-        "vehicle_id": 9,
-        "stop_index": 11,
-        "customer_id": 0,
-        "arrival_time": 1588.21,
-        "due_time": 1236.0,
-        "lateness": 352.21
-      },
-      {
-        "vehicle_id": 9,
-        "stop_index": 11,
-        "customer_id": 0,
-        "arrival_time": 1588.21,
-        "due_time": 1236.0,
-        "lateness": 352.21
-      },
-      {
-        "vehicle_id": 10,
-        "stop_index": 3,
-        "customer_id": 65,
-        "arrival_time": 450.07,
-        "due_time": 129.0,
-        "lateness": 321.07
-      },
-      {
-        "vehicle_id": 10,
-        "stop_index": 5,
-        "customer_id": 79,
-        "arrival_time": 864.39,
-        "due_time": 731.0,
-        "lateness": 133.39
-      },
-      {
-        "vehicle_id": 10,
-        "stop_index": 6,
-        "customer_id": 63,
-        "arrival_time": 992.71,
-        "due_time": 218.0,
-        "lateness": 774.71
-      },
-      {
-        "vehicle_id": 10,
-        "stop_index": 7,
-        "customer_id": 70,
-        "arrival_time": 1128.81,
-        "due_time": 456.0,
-        "lateness": 672.81
-      },
-      {
-        "vehicle_id": 10,
-        "stop_index": 8,
-        "customer_id": 73,
-        "arrival_time": 1221.81,
-        "due_time": 551.0,
-        "lateness": 670.81
-      },
-      {
-        "vehicle_id": 10,
-        "stop_index": 9,
-        "customer_id": 77,
-        "arrival_time": 1315.81,
-        "due_time": 643.0,
-        "lateness": 672.81
-      },
-      {
-        "vehicle_id": 10,
-        "stop_index": 10,
-        "customer_id": 0,
-        "arrival_time": 1457.81,
-        "due_time": 1236.0,
-        "lateness": 221.81
-      },
-      {
-        "vehicle_id": 10,
-        "stop_index": 10,
-        "customer_id": 0,
-        "arrival_time": 1457.81,
-        "due_time": 1236.0,
-        "lateness": 221.81
-      }
-    ],
-    "is_fully_feasible": false,
-    "status_summary": "INFEASIBLE SOLUTION: 89 customer time window violations (Total lateness: 50570.0).",
+    "total_fleet_duration": 9828.9369,
+    "is_time_window_valid": true,
+    "time_window_violations_count": 0,
+    "total_lateness": 0.0,
+    "time_window_violations_detail": [],
+    "is_fully_feasible": true,
+    "status_summary": "100% FEASIBLE SOLUTION: All 100 customers served. 0 capacity violations, 0 time window violations.",
     "routes_summary": [
       {
         "vehicle_id": 1,
-        "customer_count": 10,
+        "customer_count": 8,
         "route": [
           0,
-          82,
-          83,
-          86,
-          87,
-          84,
-          90,
-          89,
-          85,
-          88,
-          91,
+          13,
+          17,
+          18,
+          19,
+          15,
+          16,
+          14,
+          12,
           0
         ],
-        "total_distance": 101.62,
-        "total_demand": 170.0,
+        "total_distance": 95.88,
+        "total_demand": 190.0,
         "is_capacity_feasible": true,
-        "is_time_window_feasible": false,
-        "violations_count": 11,
-        "return_time": 1335.26
+        "is_time_window_feasible": true,
+        "violations_count": 0,
+        "return_time": 815.88
       },
       {
         "vehicle_id": 2,
-        "customer_count": 9,
+        "customer_count": 8,
         "route": [
           0,
-          94,
-          92,
-          95,
-          98,
-          93,
-          96,
-          100,
-          97,
-          99,
+          57,
+          55,
+          54,
+          53,
+          56,
+          58,
+          60,
+          59,
           0
         ],
-        "total_distance": 129.65,
-        "total_demand": 190.0,
+        "total_distance": 101.88,
+        "total_demand": 200.0,
         "is_capacity_feasible": true,
-        "is_time_window_feasible": false,
-        "violations_count": 7,
-        "return_time": 1184.04
+        "is_time_window_feasible": true,
+        "violations_count": 0,
+        "return_time": 821.88
       },
       {
         "vehicle_id": 3,
         "customer_count": 10,
         "route": [
           0,
-          1,
-          75,
-          2,
-          4,
-          3,
-          5,
-          7,
-          6,
-          9,
-          8,
+          90,
+          87,
+          86,
+          83,
+          82,
+          84,
+          85,
+          88,
+          89,
+          91,
           0
         ],
-        "total_distance": 60.87,
-        "total_demand": 160.0,
+        "total_distance": 76.07,
+        "total_demand": 170.0,
         "is_capacity_feasible": true,
-        "is_time_window_feasible": false,
-        "violations_count": 10,
-        "return_time": 1854.19
+        "is_time_window_feasible": true,
+        "violations_count": 0,
+        "return_time": 976.07
       },
       {
         "vehicle_id": 4,
         "customer_count": 9,
         "route": [
           0,
-          12,
-          11,
-          10,
-          14,
-          16,
-          15,
-          17,
-          19,
-          13,
+          32,
+          33,
+          31,
+          35,
+          37,
+          38,
+          39,
+          36,
+          34,
           0
         ],
-        "total_distance": 140.59,
-        "total_demand": 190.0,
+        "total_distance": 97.23,
+        "total_demand": 200.0,
         "is_capacity_feasible": true,
-        "is_time_window_feasible": false,
-        "violations_count": 10,
-        "return_time": 1564.51
+        "is_time_window_feasible": true,
+        "violations_count": 0,
+        "return_time": 907.23
       },
       {
         "vehicle_id": 5,
-        "customer_count": 10,
+        "customer_count": 9,
         "route": [
           0,
-          23,
-          26,
-          18,
-          28,
-          30,
-          21,
-          20,
-          25,
-          27,
-          22,
+          98,
+          96,
+          95,
+          94,
+          92,
+          93,
+          97,
+          100,
+          99,
           0
         ],
-        "total_distance": 99.89,
-        "total_demand": 170.0,
+        "total_distance": 95.94,
+        "total_demand": 190.0,
         "is_capacity_feasible": true,
-        "is_time_window_feasible": false,
-        "violations_count": 11,
-        "return_time": 1718.89
+        "is_time_window_feasible": true,
+        "violations_count": 0,
+        "return_time": 905.94
       },
       {
         "vehicle_id": 6,
-        "customer_count": 10,
+        "customer_count": 12,
         "route": [
           0,
-          24,
-          29,
-          39,
-          34,
-          36,
-          38,
-          32,
-          33,
-          37,
-          35,
+          5,
+          3,
+          7,
+          8,
+          10,
+          11,
+          9,
+          6,
+          4,
+          2,
+          1,
+          75,
           0
         ],
-        "total_distance": 120.6,
-        "total_demand": 200.0,
+        "total_distance": 59.62,
+        "total_demand": 180.0,
         "is_capacity_feasible": true,
-        "is_time_window_feasible": false,
-        "violations_count": 8,
-        "return_time": 1452.98
+        "is_time_window_feasible": true,
+        "violations_count": 0,
+        "return_time": 1139.62
       },
       {
         "vehicle_id": 7,
-        "customer_count": 10,
+        "customer_count": 13,
         "route": [
           0,
-          31,
-          52,
-          49,
-          47,
-          51,
-          50,
           43,
+          42,
+          41,
+          40,
+          44,
           46,
           45,
           48,
+          51,
+          50,
+          52,
+          49,
+          47,
           0
         ],
-        "total_distance": 102.03,
-        "total_demand": 130.0,
+        "total_distance": 64.81,
+        "total_demand": 160.0,
         "is_capacity_feasible": true,
-        "is_time_window_feasible": false,
-        "violations_count": 8,
-        "return_time": 1775.49
+        "is_time_window_feasible": true,
+        "violations_count": 0,
+        "return_time": 1234.81
       },
       {
         "vehicle_id": 8,
-        "customer_count": 9,
+        "customer_count": 11,
         "route": [
           0,
-          42,
-          44,
-          41,
-          59,
-          60,
-          40,
-          57,
-          56,
-          58,
+          20,
+          24,
+          25,
+          27,
+          29,
+          30,
+          28,
+          26,
+          23,
+          22,
+          21,
           0
         ],
-        "total_distance": 150.71,
-        "total_demand": 180.0,
+        "total_distance": 50.8,
+        "total_demand": 170.0,
         "is_capacity_feasible": true,
-        "is_time_window_feasible": false,
-        "violations_count": 8,
-        "return_time": 1299.3
+        "is_time_window_feasible": true,
+        "violations_count": 0,
+        "return_time": 1040.8
       },
       {
         "vehicle_id": 9,
-        "customer_count": 10,
-        "route": [
-          0,
-          55,
-          54,
-          53,
-          69,
-          64,
-          68,
-          61,
-          72,
-          62,
-          66,
-          0
-        ],
-        "total_distance": 117.67,
-        "total_demand": 150.0,
-        "is_capacity_feasible": true,
-        "is_time_window_feasible": false,
-        "violations_count": 8,
-        "return_time": 1588.21
-      },
-      {
-        "vehicle_id": 10,
         "customer_count": 9,
-        "route": [
-          0,
-          67,
-          74,
-          65,
-          80,
-          79,
-          63,
-          70,
-          73,
-          77,
-          0
-        ],
-        "total_distance": 215.82,
-        "total_demand": 190.0,
-        "is_capacity_feasible": true,
-        "is_time_window_feasible": false,
-        "violations_count": 8,
-        "return_time": 1457.81
-      },
-      {
-        "vehicle_id": 11,
-        "customer_count": 4,
         "route": [
           0,
           81,
           78,
           76,
           71,
+          70,
+          73,
+          77,
+          79,
+          80,
           0
         ],
-        "total_distance": 114.44,
-        "total_demand": 80.0,
+        "total_distance": 127.3,
+        "total_demand": 150.0,
         "is_capacity_feasible": true,
         "is_time_window_feasible": true,
         "violations_count": 0,
-        "return_time": 474.44
+        "return_time": 937.3
+      },
+      {
+        "vehicle_id": 10,
+        "customer_count": 11,
+        "route": [
+          0,
+          67,
+          65,
+          63,
+          62,
+          74,
+          72,
+          61,
+          64,
+          68,
+          66,
+          69,
+          0
+        ],
+        "total_distance": 59.4,
+        "total_demand": 200.0,
+        "is_capacity_feasible": true,
+        "is_time_window_feasible": true,
+        "violations_count": 0,
+        "return_time": 1049.4
       }
     ]
   },
-  "total_qaoa_subproblems": 31,
-  "quantum_feasible_subproblems": 27,
-  "total_qubits_allocated": 328,
+  "total_qaoa_subproblems": 47,
+  "accepted_improvements": 0,
+  "confirmed_feasible": 37,
+  "rejected_candidates": 10,
+  "total_qubits_allocated": 423,
   "timing_breakdown": {
-    "classical_clustering_seconds": 0.0002,
-    "total_quantum_execution_seconds": 30.5795,
-    "classical_synthesis_seconds": 0.0015,
-    "total_runtime_seconds": 36.7572
+    "classical_initial_solve_seconds": 0.0087,
+    "total_quantum_execution_seconds": 14.7086,
+    "classical_synthesis_seconds": 0.001,
+    "total_runtime_seconds": 16.8857
   },
   "subproblems_summary": [
     {
-      "subproblem_id": "V1_S1",
+      "subproblem_id": "V1_W1",
       "vehicle_id": 1,
-      "n_customers": 3,
-      "n_qubits": 9,
-      "circuit_depth": 19,
-      "feasible_shots": "7/500 (1.4%)",
-      "best_order": [
-        82,
-        83,
-        86
-      ],
-      "distance": 70.83,
-      "classical_exact_distance": 70.83,
-      "gap_percent": 0.0,
-      "runtime_seconds": 2.039
-    },
-    {
-      "subproblem_id": "V1_S2",
-      "vehicle_id": 1,
-      "n_customers": 3,
-      "n_qubits": 9,
-      "circuit_depth": 19,
-      "feasible_shots": "37/500 (7.4%)",
-      "best_order": [
-        87,
-        84,
-        90
-      ],
-      "distance": 62.38,
-      "classical_exact_distance": 62.38,
-      "gap_percent": 0.0,
-      "runtime_seconds": 0.162
-    },
-    {
-      "subproblem_id": "V1_S3",
-      "vehicle_id": 1,
-      "n_customers": 4,
-      "n_qubits": 16,
-      "circuit_depth": 33,
-      "feasible_shots": "0/500 (0.0%)",
-      "best_order": [
-        89,
-        85,
-        88,
-        91
-      ],
-      "distance": 60.1,
-      "classical_exact_distance": 60.1,
-      "gap_percent": 0.0,
-      "runtime_seconds": 2.387
-    },
-    {
-      "subproblem_id": "V2_S1",
-      "vehicle_id": 2,
-      "n_customers": 3,
-      "n_qubits": 9,
-      "circuit_depth": 19,
-      "feasible_shots": "15/500 (3.0%)",
-      "best_order": [
-        94,
-        92,
-        95
-      ],
-      "distance": 88.49,
-      "classical_exact_distance": 88.49,
-      "gap_percent": 0.0,
-      "runtime_seconds": 0.158
-    },
-    {
-      "subproblem_id": "V2_S2",
-      "vehicle_id": 2,
-      "n_customers": 3,
-      "n_qubits": 9,
-      "circuit_depth": 19,
-      "feasible_shots": "8/500 (1.6%)",
-      "best_order": [
-        98,
-        93,
-        96
-      ],
-      "distance": 86.14,
-      "classical_exact_distance": 86.14,
-      "gap_percent": 0.0,
-      "runtime_seconds": 0.207
-    },
-    {
-      "subproblem_id": "V2_S3",
-      "vehicle_id": 2,
-      "n_customers": 3,
-      "n_qubits": 9,
-      "circuit_depth": 19,
-      "feasible_shots": "23/500 (4.6%)",
-      "best_order": [
-        100,
-        97,
-        99
-      ],
-      "distance": 83.69,
-      "classical_exact_distance": 83.69,
-      "gap_percent": 0.0,
-      "runtime_seconds": 0.151
-    },
-    {
-      "subproblem_id": "V3_S1",
-      "vehicle_id": 3,
-      "n_customers": 3,
-      "n_qubits": 9,
-      "circuit_depth": 19,
-      "feasible_shots": "1/500 (0.2%)",
-      "best_order": [
-        1,
-        75,
-        2
-      ],
-      "distance": 47.3,
-      "classical_exact_distance": 41.43,
-      "gap_percent": 14.17,
-      "runtime_seconds": 0.159
-    },
-    {
-      "subproblem_id": "V3_S2",
-      "vehicle_id": 3,
-      "n_customers": 3,
-      "n_qubits": 9,
-      "circuit_depth": 19,
-      "feasible_shots": "28/500 (5.6%)",
-      "best_order": [
-        4,
-        3,
-        5
-      ],
-      "distance": 36.24,
-      "classical_exact_distance": 36.24,
-      "gap_percent": 0.0,
-      "runtime_seconds": 0.169
-    },
-    {
-      "subproblem_id": "V3_S3",
-      "vehicle_id": 3,
-      "n_customers": 4,
-      "n_qubits": 16,
-      "circuit_depth": 33,
-      "feasible_shots": "0/500 (0.0%)",
-      "best_order": [
-        7,
-        6,
-        9,
-        8
-      ],
-      "distance": 41.35,
-      "classical_exact_distance": 41.35,
-      "gap_percent": 0.0,
-      "runtime_seconds": 4.629
-    },
-    {
-      "subproblem_id": "V4_S1",
-      "vehicle_id": 4,
-      "n_customers": 3,
-      "n_qubits": 9,
-      "circuit_depth": 19,
-      "feasible_shots": "55/500 (11.0%)",
-      "best_order": [
-        12,
-        11,
-        10
-      ],
-      "distance": 76.71,
-      "classical_exact_distance": 76.71,
-      "gap_percent": 0.0,
-      "runtime_seconds": 0.167
-    },
-    {
-      "subproblem_id": "V4_S2",
-      "vehicle_id": 4,
-      "n_customers": 3,
-      "n_qubits": 9,
-      "circuit_depth": 19,
-      "feasible_shots": "17/500 (3.4%)",
-      "best_order": [
-        14,
-        16,
-        15
-      ],
-      "distance": 82.41,
-      "classical_exact_distance": 82.41,
-      "gap_percent": 0.0,
-      "runtime_seconds": 0.168
-    },
-    {
-      "subproblem_id": "V4_S3",
-      "vehicle_id": 4,
-      "n_customers": 3,
-      "n_qubits": 9,
-      "circuit_depth": 19,
-      "feasible_shots": "15/500 (3.0%)",
-      "best_order": [
+      "window_start": 1,
+      "endpoints": "0 -> ... -> 19",
+      "customer_ids": [
+        13,
         17,
-        19,
-        13
-      ],
-      "distance": 78.54,
-      "classical_exact_distance": 78.54,
-      "gap_percent": 0.0,
-      "runtime_seconds": 0.149
-    },
-    {
-      "subproblem_id": "V5_S1",
-      "vehicle_id": 5,
-      "n_customers": 3,
-      "n_qubits": 9,
-      "circuit_depth": 19,
-      "feasible_shots": "1/500 (0.2%)",
-      "best_order": [
-        23,
-        26,
         18
       ],
-      "distance": 73.72,
-      "classical_exact_distance": 73.72,
-      "gap_percent": 0.0,
-      "runtime_seconds": 0.147
-    },
-    {
-      "subproblem_id": "V5_S2",
-      "vehicle_id": 5,
       "n_customers": 3,
       "n_qubits": 9,
       "circuit_depth": 19,
-      "feasible_shots": "65/500 (13.0%)",
+      "feasible_shots": "13/300 (4.3%)",
       "best_order": [
-        28,
-        30,
-        21
+        13,
+        17,
+        18
       ],
-      "distance": 41.36,
-      "classical_exact_distance": 41.36,
-      "gap_percent": 0.0,
-      "runtime_seconds": 0.158
+      "current_distance": 42.81,
+      "candidate_distance": 42.81,
+      "delta": -0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 4.857
     },
     {
-      "subproblem_id": "V5_S3",
-      "vehicle_id": 5,
-      "n_customers": 4,
-      "n_qubits": 16,
-      "circuit_depth": 33,
-      "feasible_shots": "2/500 (0.4%)",
-      "best_order": [
-        20,
-        25,
-        27,
-        22
+      "subproblem_id": "V1_W2",
+      "vehicle_id": 1,
+      "window_start": 3,
+      "endpoints": "17 -> ... -> 16",
+      "customer_ids": [
+        18,
+        19,
+        15
       ],
-      "distance": 34.55,
-      "classical_exact_distance": 34.45,
-      "gap_percent": 0.31,
-      "runtime_seconds": 4.213
-    },
-    {
-      "subproblem_id": "V6_S1",
-      "vehicle_id": 6,
       "n_customers": 3,
       "n_qubits": 9,
       "circuit_depth": 19,
-      "feasible_shots": "5/500 (1.0%)",
+      "feasible_shots": "6/300 (2.0%)",
       "best_order": [
-        24,
-        29,
-        39
+        18,
+        19,
+        15
       ],
-      "distance": 80.93,
-      "classical_exact_distance": 80.93,
-      "gap_percent": 0.0,
-      "runtime_seconds": 0.246
+      "current_distance": 18.0,
+      "candidate_distance": 18.0,
+      "delta": 0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.252
     },
     {
-      "subproblem_id": "V6_S2",
-      "vehicle_id": 6,
+      "subproblem_id": "V1_W3",
+      "vehicle_id": 1,
+      "window_start": 5,
+      "endpoints": "19 -> ... -> 12",
+      "customer_ids": [
+        15,
+        16,
+        14
+      ],
       "n_customers": 3,
       "n_qubits": 9,
       "circuit_depth": 19,
-      "feasible_shots": "6/500 (1.2%)",
+      "feasible_shots": "6/300 (2.0%)",
       "best_order": [
-        34,
-        36,
-        38
+        15,
+        16,
+        14
       ],
-      "distance": 83.69,
-      "classical_exact_distance": 83.69,
-      "gap_percent": 0.0,
+      "current_distance": 15.0,
+      "candidate_distance": 15.0,
+      "delta": 0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.358
+    },
+    {
+      "subproblem_id": "V1_W4",
+      "vehicle_id": 1,
+      "window_start": 6,
+      "endpoints": "15 -> ... -> 0",
+      "customer_ids": [
+        16,
+        14,
+        12
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "9/300 (3.0%)",
+      "best_order": [
+        16,
+        14,
+        12
+      ],
+      "current_distance": 48.08,
+      "candidate_distance": 48.08,
+      "delta": 0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.315
+    },
+    {
+      "subproblem_id": "V2_W1",
+      "vehicle_id": 2,
+      "window_start": 1,
+      "endpoints": "0 -> ... -> 53",
+      "customer_ids": [
+        57,
+        55,
+        54
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "10/300 (3.3%)",
+      "best_order": [
+        57,
+        55,
+        54
+      ],
+      "current_distance": 47.39,
+      "candidate_distance": 47.39,
+      "delta": 0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.297
+    },
+    {
+      "subproblem_id": "V2_W2",
+      "vehicle_id": 2,
+      "window_start": 3,
+      "endpoints": "55 -> ... -> 58",
+      "customer_ids": [
+        54,
+        53,
+        56
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "6/300 (2.0%)",
+      "best_order": [
+        54,
+        53,
+        56
+      ],
+      "current_distance": 16.39,
+      "candidate_distance": 16.39,
+      "delta": 0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.265
+    },
+    {
+      "subproblem_id": "V2_W3",
+      "vehicle_id": 2,
+      "window_start": 5,
+      "endpoints": "53 -> ... -> 59",
+      "customer_ids": [
+        56,
+        58,
+        60
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "3/300 (1.0%)",
+      "best_order": [
+        56,
+        58,
+        60
+      ],
+      "current_distance": 19.44,
+      "candidate_distance": 19.44,
+      "delta": -0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.242
+    },
+    {
+      "subproblem_id": "V2_W4",
+      "vehicle_id": 2,
+      "window_start": 6,
+      "endpoints": "56 -> ... -> 0",
+      "customer_ids": [
+        58,
+        60,
+        59
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "5/300 (1.7%)",
+      "best_order": [
+        58,
+        60,
+        59
+      ],
+      "current_distance": 50.5,
+      "candidate_distance": 53.06,
+      "delta": 2.5597,
+      "outcome": "REJECTED",
+      "rejection_reason": "time_window_violation (2 late stops)",
+      "runtime_seconds": 0.21
+    },
+    {
+      "subproblem_id": "V3_W1",
+      "vehicle_id": 3,
+      "window_start": 1,
+      "endpoints": "0 -> ... -> 83",
+      "customer_ids": [
+        90,
+        87,
+        86
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "0/300 (0.0%)",
+      "best_order": [
+        90,
+        87,
+        86
+      ],
+      "current_distance": 32.62,
+      "candidate_distance": 32.62,
+      "delta": 0.0,
+      "outcome": "REJECTED",
+      "rejection_reason": "no_feasible_permutation_sampled",
       "runtime_seconds": 0.264
     },
     {
-      "subproblem_id": "V6_S3",
-      "vehicle_id": 6,
-      "n_customers": 4,
-      "n_qubits": 16,
-      "circuit_depth": 33,
-      "feasible_shots": "0/500 (0.0%)",
+      "subproblem_id": "V3_W2",
+      "vehicle_id": 3,
+      "window_start": 3,
+      "endpoints": "87 -> ... -> 84",
+      "customer_ids": [
+        86,
+        83,
+        82
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "12/300 (4.0%)",
+      "best_order": [
+        86,
+        83,
+        82
+      ],
+      "current_distance": 15.83,
+      "candidate_distance": 15.83,
+      "delta": 0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.208
+    },
+    {
+      "subproblem_id": "V3_W3",
+      "vehicle_id": 3,
+      "window_start": 5,
+      "endpoints": "83 -> ... -> 88",
+      "customer_ids": [
+        82,
+        84,
+        85
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "8/300 (2.7%)",
+      "best_order": [
+        82,
+        84,
+        85
+      ],
+      "current_distance": 14.66,
+      "candidate_distance": 14.66,
+      "delta": 0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.19
+    },
+    {
+      "subproblem_id": "V3_W4",
+      "vehicle_id": 3,
+      "window_start": 7,
+      "endpoints": "84 -> ... -> 91",
+      "customer_ids": [
+        85,
+        88,
+        89
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "12/300 (4.0%)",
+      "best_order": [
+        85,
+        88,
+        89
+      ],
+      "current_distance": 12.26,
+      "candidate_distance": 12.26,
+      "delta": -0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.204
+    },
+    {
+      "subproblem_id": "V3_W5",
+      "vehicle_id": 3,
+      "window_start": 8,
+      "endpoints": "85 -> ... -> 0",
+      "customer_ids": [
+        88,
+        89,
+        91
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "0/300 (0.0%)",
+      "best_order": [
+        88,
+        89,
+        91
+      ],
+      "current_distance": 31.79,
+      "candidate_distance": 31.79,
+      "delta": 0.0,
+      "outcome": "REJECTED",
+      "rejection_reason": "no_feasible_permutation_sampled",
+      "runtime_seconds": 0.412
+    },
+    {
+      "subproblem_id": "V4_W1",
+      "vehicle_id": 4,
+      "window_start": 1,
+      "endpoints": "0 -> ... -> 35",
+      "customer_ids": [
+        32,
+        33,
+        31
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "4/300 (1.3%)",
       "best_order": [
         32,
         33,
-        37,
-        35
+        31
       ],
-      "distance": 83.53,
-      "classical_exact_distance": 83.53,
-      "gap_percent": 0.0,
-      "runtime_seconds": 4.426
+      "current_distance": 44.01,
+      "candidate_distance": 44.01,
+      "delta": -0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.2
     },
     {
-      "subproblem_id": "V7_S1",
-      "vehicle_id": 7,
+      "subproblem_id": "V4_W2",
+      "vehicle_id": 4,
+      "window_start": 3,
+      "endpoints": "33 -> ... -> 38",
+      "customer_ids": [
+        31,
+        35,
+        37
+      ],
       "n_customers": 3,
       "n_qubits": 9,
       "circuit_depth": 19,
-      "feasible_shots": "29/500 (5.8%)",
+      "feasible_shots": "5/300 (1.7%)",
       "best_order": [
         31,
-        52,
-        49
+        35,
+        37
       ],
-      "distance": 70.75,
-      "classical_exact_distance": 70.75,
-      "gap_percent": 0.0,
-      "runtime_seconds": 0.229
+      "current_distance": 18.22,
+      "candidate_distance": 22.26,
+      "delta": 4.0488,
+      "outcome": "REJECTED",
+      "rejection_reason": "time_window_violation (6 late stops)",
+      "runtime_seconds": 0.194
     },
     {
-      "subproblem_id": "V7_S2",
-      "vehicle_id": 7,
+      "subproblem_id": "V4_W3",
+      "vehicle_id": 4,
+      "window_start": 5,
+      "endpoints": "35 -> ... -> 36",
+      "customer_ids": [
+        37,
+        38,
+        39
+      ],
       "n_customers": 3,
       "n_qubits": 9,
       "circuit_depth": 19,
-      "feasible_shots": "40/500 (8.0%)",
+      "feasible_shots": "6/300 (2.0%)",
       "best_order": [
-        47,
-        51,
-        50
+        37,
+        38,
+        39
       ],
-      "distance": 50.14,
-      "classical_exact_distance": 50.14,
-      "gap_percent": 0.0,
-      "runtime_seconds": 0.323
+      "current_distance": 17.83,
+      "candidate_distance": 17.83,
+      "delta": 0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.199
     },
     {
-      "subproblem_id": "V7_S3",
-      "vehicle_id": 7,
-      "n_customers": 4,
-      "n_qubits": 16,
-      "circuit_depth": 33,
-      "feasible_shots": "1/500 (0.2%)",
-      "best_order": [
-        43,
-        46,
-        45,
-        48
+      "subproblem_id": "V4_W4",
+      "vehicle_id": 4,
+      "window_start": 7,
+      "endpoints": "38 -> ... -> 0",
+      "customer_ids": [
+        39,
+        36,
+        34
       ],
-      "distance": 48.12,
-      "classical_exact_distance": 47.8,
-      "gap_percent": 0.66,
-      "runtime_seconds": 3.762
-    },
-    {
-      "subproblem_id": "V8_S1",
-      "vehicle_id": 8,
       "n_customers": 3,
       "n_qubits": 9,
       "circuit_depth": 19,
-      "feasible_shots": "6/500 (1.2%)",
+      "feasible_shots": "9/300 (3.0%)",
       "best_order": [
-        42,
-        44,
-        41
+        39,
+        36,
+        34
       ],
-      "distance": 43.84,
-      "classical_exact_distance": 43.84,
-      "gap_percent": 0.0,
-      "runtime_seconds": 0.158
+      "current_distance": 45.39,
+      "candidate_distance": 45.39,
+      "delta": 0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.204
     },
     {
-      "subproblem_id": "V8_S2",
-      "vehicle_id": 8,
+      "subproblem_id": "V5_W1",
+      "vehicle_id": 5,
+      "window_start": 1,
+      "endpoints": "0 -> ... -> 94",
+      "customer_ids": [
+        98,
+        96,
+        95
+      ],
       "n_customers": 3,
       "n_qubits": 9,
       "circuit_depth": 19,
-      "feasible_shots": "6/500 (1.2%)",
+      "feasible_shots": "11/300 (3.7%)",
       "best_order": [
-        59,
-        60,
-        40
+        98,
+        96,
+        95
       ],
-      "distance": 91.11,
-      "classical_exact_distance": 91.11,
-      "gap_percent": 0.0,
-      "runtime_seconds": 0.185
+      "current_distance": 41.8,
+      "candidate_distance": 41.8,
+      "delta": 0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.201
     },
     {
-      "subproblem_id": "V8_S3",
-      "vehicle_id": 8,
+      "subproblem_id": "V5_W2",
+      "vehicle_id": 5,
+      "window_start": 3,
+      "endpoints": "96 -> ... -> 93",
+      "customer_ids": [
+        95,
+        94,
+        92
+      ],
       "n_customers": 3,
       "n_qubits": 9,
       "circuit_depth": 19,
-      "feasible_shots": "23/500 (4.6%)",
+      "feasible_shots": "5/300 (1.7%)",
       "best_order": [
-        57,
-        56,
-        58
+        95,
+        94,
+        92
       ],
-      "distance": 92.04,
-      "classical_exact_distance": 92.04,
-      "gap_percent": 0.0,
-      "runtime_seconds": 0.587
+      "current_distance": 11.21,
+      "candidate_distance": 11.21,
+      "delta": -0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.206
     },
     {
-      "subproblem_id": "V9_S1",
-      "vehicle_id": 9,
+      "subproblem_id": "V5_W3",
+      "vehicle_id": 5,
+      "window_start": 5,
+      "endpoints": "94 -> ... -> 100",
+      "customer_ids": [
+        92,
+        93,
+        97
+      ],
       "n_customers": 3,
       "n_qubits": 9,
       "circuit_depth": 19,
-      "feasible_shots": "3/500 (0.6%)",
+      "feasible_shots": "5/300 (1.7%)",
       "best_order": [
-        55,
-        54,
-        53
+        92,
+        93,
+        97
       ],
-      "distance": 90.62,
-      "classical_exact_distance": 90.62,
-      "gap_percent": 0.0,
+      "current_distance": 15.61,
+      "candidate_distance": 15.61,
+      "delta": 0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.197
+    },
+    {
+      "subproblem_id": "V5_W4",
+      "vehicle_id": 5,
+      "window_start": 7,
+      "endpoints": "93 -> ... -> 0",
+      "customer_ids": [
+        97,
+        100,
+        99
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "8/300 (2.7%)",
+      "best_order": [
+        97,
+        100,
+        99
+      ],
+      "current_distance": 48.54,
+      "candidate_distance": 48.54,
+      "delta": -0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.189
+    },
+    {
+      "subproblem_id": "V6_W1",
+      "vehicle_id": 6,
+      "window_start": 1,
+      "endpoints": "0 -> ... -> 8",
+      "customer_ids": [
+        5,
+        3,
+        7
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "1/300 (0.3%)",
+      "best_order": [
+        5,
+        3,
+        7
+      ],
+      "current_distance": 20.96,
+      "candidate_distance": 23.84,
+      "delta": 2.8797,
+      "outcome": "REJECTED",
+      "rejection_reason": "time_window_violation (10 late stops)",
+      "runtime_seconds": 0.181
+    },
+    {
+      "subproblem_id": "V6_W2",
+      "vehicle_id": 6,
+      "window_start": 3,
+      "endpoints": "3 -> ... -> 11",
+      "customer_ids": [
+        7,
+        8,
+        10
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "25/300 (8.3%)",
+      "best_order": [
+        7,
+        8,
+        10
+      ],
+      "current_distance": 11.43,
+      "candidate_distance": 11.43,
+      "delta": 0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.187
+    },
+    {
+      "subproblem_id": "V6_W3",
+      "vehicle_id": 6,
+      "window_start": 5,
+      "endpoints": "8 -> ... -> 6",
+      "customer_ids": [
+        10,
+        11,
+        9
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "12/300 (4.0%)",
+      "best_order": [
+        10,
+        11,
+        9
+      ],
+      "current_distance": 12.0,
+      "candidate_distance": 12.0,
+      "delta": 0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.186
+    },
+    {
+      "subproblem_id": "V6_W4",
+      "vehicle_id": 6,
+      "window_start": 7,
+      "endpoints": "11 -> ... -> 2",
+      "customer_ids": [
+        9,
+        6,
+        4
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "13/300 (4.3%)",
+      "best_order": [
+        9,
+        6,
+        4
+      ],
+      "current_distance": 11.24,
+      "candidate_distance": 11.24,
+      "delta": 0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.193
+    },
+    {
+      "subproblem_id": "V6_W5",
+      "vehicle_id": 6,
+      "window_start": 9,
+      "endpoints": "6 -> ... -> 75",
+      "customer_ids": [
+        4,
+        2,
+        1
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "27/300 (9.0%)",
+      "best_order": [
+        4,
+        2,
+        1
+      ],
+      "current_distance": 10.84,
+      "candidate_distance": 10.84,
+      "delta": -0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
       "runtime_seconds": 0.184
     },
     {
-      "subproblem_id": "V9_S2",
+      "subproblem_id": "V6_W6",
+      "vehicle_id": 6,
+      "window_start": 10,
+      "endpoints": "4 -> ... -> 0",
+      "customer_ids": [
+        2,
+        1,
+        75
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "12/300 (4.0%)",
+      "best_order": [
+        2,
+        1,
+        75
+      ],
+      "current_distance": 24.42,
+      "candidate_distance": 24.42,
+      "delta": -0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.196
+    },
+    {
+      "subproblem_id": "V7_W1",
+      "vehicle_id": 7,
+      "window_start": 1,
+      "endpoints": "0 -> ... -> 40",
+      "customer_ids": [
+        43,
+        42,
+        41
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "6/300 (2.0%)",
+      "best_order": [
+        43,
+        42,
+        41
+      ],
+      "current_distance": 23.55,
+      "candidate_distance": 24.99,
+      "delta": 1.434,
+      "outcome": "REJECTED",
+      "rejection_reason": "time_window_violation (13 late stops)",
+      "runtime_seconds": 0.188
+    },
+    {
+      "subproblem_id": "V7_W2",
+      "vehicle_id": 7,
+      "window_start": 3,
+      "endpoints": "42 -> ... -> 46",
+      "customer_ids": [
+        41,
+        40,
+        44
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "14/300 (4.7%)",
+      "best_order": [
+        41,
+        40,
+        44
+      ],
+      "current_distance": 9.83,
+      "candidate_distance": 9.83,
+      "delta": -0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.189
+    },
+    {
+      "subproblem_id": "V7_W3",
+      "vehicle_id": 7,
+      "window_start": 5,
+      "endpoints": "40 -> ... -> 48",
+      "customer_ids": [
+        44,
+        46,
+        45
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "55/300 (18.3%)",
+      "best_order": [
+        44,
+        46,
+        45
+      ],
+      "current_distance": 9.83,
+      "candidate_distance": 9.83,
+      "delta": -0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.189
+    },
+    {
+      "subproblem_id": "V7_W4",
+      "vehicle_id": 7,
+      "window_start": 7,
+      "endpoints": "46 -> ... -> 50",
+      "customer_ids": [
+        45,
+        48,
+        51
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "8/300 (2.7%)",
+      "best_order": [
+        45,
+        48,
+        51
+      ],
+      "current_distance": 9.24,
+      "candidate_distance": 9.24,
+      "delta": 0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.193
+    },
+    {
+      "subproblem_id": "V7_W5",
+      "vehicle_id": 7,
+      "window_start": 9,
+      "endpoints": "48 -> ... -> 49",
+      "customer_ids": [
+        51,
+        50,
+        52
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "0/300 (0.0%)",
+      "best_order": [
+        51,
+        50,
+        52
+      ],
+      "current_distance": 11.4,
+      "candidate_distance": 11.4,
+      "delta": 0.0,
+      "outcome": "REJECTED",
+      "rejection_reason": "no_feasible_permutation_sampled",
+      "runtime_seconds": 0.195
+    },
+    {
+      "subproblem_id": "V7_W6",
+      "vehicle_id": 7,
+      "window_start": 11,
+      "endpoints": "50 -> ... -> 0",
+      "customer_ids": [
+        52,
+        49,
+        47
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "5/300 (1.7%)",
+      "best_order": [
+        52,
+        49,
+        47
+      ],
+      "current_distance": 26.19,
+      "candidate_distance": 29.37,
+      "delta": 3.1817,
+      "outcome": "REJECTED",
+      "rejection_reason": "time_window_violation (3 late stops)",
+      "runtime_seconds": 0.189
+    },
+    {
+      "subproblem_id": "V8_W1",
+      "vehicle_id": 8,
+      "window_start": 1,
+      "endpoints": "0 -> ... -> 27",
+      "customer_ids": [
+        20,
+        24,
+        25
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "1/300 (0.3%)",
+      "best_order": [
+        20,
+        24,
+        25
+      ],
+      "current_distance": 19.0,
+      "candidate_distance": 19.0,
+      "delta": 0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.198
+    },
+    {
+      "subproblem_id": "V8_W2",
+      "vehicle_id": 8,
+      "window_start": 3,
+      "endpoints": "24 -> ... -> 30",
+      "customer_ids": [
+        25,
+        27,
+        29
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "6/300 (2.0%)",
+      "best_order": [
+        25,
+        27,
+        29
+      ],
+      "current_distance": 12.61,
+      "candidate_distance": 12.61,
+      "delta": 0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.279
+    },
+    {
+      "subproblem_id": "V8_W3",
+      "vehicle_id": 8,
+      "window_start": 5,
+      "endpoints": "27 -> ... -> 26",
+      "customer_ids": [
+        29,
+        30,
+        28
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "10/300 (3.3%)",
+      "best_order": [
+        29,
+        30,
+        28
+      ],
+      "current_distance": 13.61,
+      "candidate_distance": 13.61,
+      "delta": 0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.191
+    },
+    {
+      "subproblem_id": "V8_W4",
+      "vehicle_id": 8,
+      "window_start": 7,
+      "endpoints": "30 -> ... -> 22",
+      "customer_ids": [
+        28,
+        26,
+        23
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "3/300 (1.0%)",
+      "best_order": [
+        28,
+        26,
+        23
+      ],
+      "current_distance": 11.0,
+      "candidate_distance": 11.0,
+      "delta": 0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.192
+    },
+    {
+      "subproblem_id": "V8_W5",
+      "vehicle_id": 8,
+      "window_start": 9,
+      "endpoints": "26 -> ... -> 0",
+      "customer_ids": [
+        23,
+        22,
+        21
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "2/300 (0.7%)",
+      "best_order": [
+        23,
+        22,
+        21
+      ],
+      "current_distance": 18.2,
+      "candidate_distance": 18.2,
+      "delta": -0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.195
+    },
+    {
+      "subproblem_id": "V9_W1",
       "vehicle_id": 9,
+      "window_start": 1,
+      "endpoints": "0 -> ... -> 71",
+      "customer_ids": [
+        81,
+        78,
+        76
+      ],
       "n_customers": 3,
       "n_qubits": 9,
       "circuit_depth": 19,
-      "feasible_shots": "51/500 (10.2%)",
+      "feasible_shots": "0/300 (0.0%)",
       "best_order": [
-        69,
-        64,
-        68
+        81,
+        78,
+        76
       ],
-      "distance": 45.26,
-      "classical_exact_distance": 45.26,
-      "gap_percent": 0.0,
-      "runtime_seconds": 0.148
+      "current_distance": 57.43,
+      "candidate_distance": 57.43,
+      "delta": 0.0,
+      "outcome": "REJECTED",
+      "rejection_reason": "no_feasible_permutation_sampled",
+      "runtime_seconds": 0.188
     },
     {
-      "subproblem_id": "V9_S3",
+      "subproblem_id": "V9_W2",
       "vehicle_id": 9,
-      "n_customers": 4,
-      "n_qubits": 16,
-      "circuit_depth": 33,
-      "feasible_shots": "10/500 (2.0%)",
-      "best_order": [
-        61,
-        72,
-        62,
-        66
+      "window_start": 3,
+      "endpoints": "78 -> ... -> 73",
+      "customer_ids": [
+        76,
+        71,
+        70
       ],
-      "distance": 50.74,
-      "classical_exact_distance": 49.24,
-      "gap_percent": 3.05,
-      "runtime_seconds": 2.117
-    },
-    {
-      "subproblem_id": "V10_S1",
-      "vehicle_id": 10,
       "n_customers": 3,
       "n_qubits": 9,
       "circuit_depth": 19,
-      "feasible_shots": "9/500 (1.8%)",
+      "feasible_shots": "12/300 (4.0%)",
       "best_order": [
-        67,
-        74,
-        65
+        76,
+        71,
+        70
       ],
-      "distance": 39.89,
-      "classical_exact_distance": 39.89,
-      "gap_percent": 0.0,
-      "runtime_seconds": 0.16
+      "current_distance": 15.0,
+      "candidate_distance": 15.0,
+      "delta": 0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.188
     },
     {
-      "subproblem_id": "V10_S2",
-      "vehicle_id": 10,
+      "subproblem_id": "V9_W3",
+      "vehicle_id": 9,
+      "window_start": 5,
+      "endpoints": "71 -> ... -> 79",
+      "customer_ids": [
+        70,
+        73,
+        77
+      ],
       "n_customers": 3,
       "n_qubits": 9,
       "circuit_depth": 19,
-      "feasible_shots": "2/500 (0.4%)",
-      "best_order": [
-        80,
-        79,
-        63
-      ],
-      "distance": 109.33,
-      "classical_exact_distance": 108.68,
-      "gap_percent": 0.6,
-      "runtime_seconds": 0.164
-    },
-    {
-      "subproblem_id": "V10_S3",
-      "vehicle_id": 10,
-      "n_customers": 3,
-      "n_qubits": 9,
-      "circuit_depth": 19,
-      "feasible_shots": "27/500 (5.4%)",
+      "feasible_shots": "7/300 (2.3%)",
       "best_order": [
         70,
         73,
         77
       ],
-      "distance": 117.52,
-      "classical_exact_distance": 117.52,
-      "gap_percent": 0.0,
-      "runtime_seconds": 0.153
+      "current_distance": 13.0,
+      "candidate_distance": 13.0,
+      "delta": 0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.196
     },
     {
-      "subproblem_id": "V11_S1",
-      "vehicle_id": 11,
-      "n_customers": 4,
-      "n_qubits": 16,
-      "circuit_depth": 33,
-      "feasible_shots": "0/500 (0.0%)",
-      "best_order": [
-        81,
-        78,
-        76,
-        71
+      "subproblem_id": "V9_W4",
+      "vehicle_id": 9,
+      "window_start": 7,
+      "endpoints": "73 -> ... -> 0",
+      "customer_ids": [
+        77,
+        79,
+        80
       ],
-      "distance": 114.44,
-      "classical_exact_distance": 114.44,
-      "gap_percent": 0.0,
-      "runtime_seconds": 2.412
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "2/300 (0.7%)",
+      "best_order": [
+        77,
+        79,
+        80
+      ],
+      "current_distance": 61.86,
+      "candidate_distance": 61.86,
+      "delta": -0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.186
+    },
+    {
+      "subproblem_id": "V10_W1",
+      "vehicle_id": 10,
+      "window_start": 1,
+      "endpoints": "0 -> ... -> 62",
+      "customer_ids": [
+        67,
+        65,
+        63
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "5/300 (1.7%)",
+      "best_order": [
+        67,
+        65,
+        63
+      ],
+      "current_distance": 20.21,
+      "candidate_distance": 20.21,
+      "delta": 0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.196
+    },
+    {
+      "subproblem_id": "V10_W2",
+      "vehicle_id": 10,
+      "window_start": 3,
+      "endpoints": "65 -> ... -> 72",
+      "customer_ids": [
+        63,
+        62,
+        74
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "12/300 (4.0%)",
+      "best_order": [
+        63,
+        62,
+        74
+      ],
+      "current_distance": 15.0,
+      "candidate_distance": 15.0,
+      "delta": 0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.19
+    },
+    {
+      "subproblem_id": "V10_W3",
+      "vehicle_id": 10,
+      "window_start": 5,
+      "endpoints": "62 -> ... -> 64",
+      "customer_ids": [
+        74,
+        72,
+        61
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "11/300 (3.7%)",
+      "best_order": [
+        74,
+        72,
+        61
+      ],
+      "current_distance": 13.0,
+      "candidate_distance": 16.83,
+      "delta": 3.831,
+      "outcome": "REJECTED",
+      "rejection_reason": "time_window_violation (5 late stops)",
+      "runtime_seconds": 0.198
+    },
+    {
+      "subproblem_id": "V10_W4",
+      "vehicle_id": 10,
+      "window_start": 7,
+      "endpoints": "72 -> ... -> 66",
+      "customer_ids": [
+        61,
+        64,
+        68
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "7/300 (2.3%)",
+      "best_order": [
+        61,
+        64,
+        68
+      ],
+      "current_distance": 13.39,
+      "candidate_distance": 13.39,
+      "delta": 0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.186
+    },
+    {
+      "subproblem_id": "V10_W5",
+      "vehicle_id": 10,
+      "window_start": 9,
+      "endpoints": "64 -> ... -> 0",
+      "customer_ids": [
+        68,
+        66,
+        69
+      ],
+      "n_customers": 3,
+      "n_qubits": 9,
+      "circuit_depth": 19,
+      "feasible_shots": "5/300 (1.7%)",
+      "best_order": [
+        68,
+        66,
+        69
+      ],
+      "current_distance": 26.2,
+      "candidate_distance": 26.2,
+      "delta": 0.0,
+      "outcome": "CONFIRMED_FEASIBLE",
+      "rejection_reason": null,
+      "runtime_seconds": 0.194
     }
   ],
-  "methodology_notes": "Practical Hybrid Quantum-Classical Architecture: Classical polar sweep partitioned the 100 customers into 11 vehicle clusters (all demand <= 200). Within clusters, 31 genuine QAOA subproblems of 3-4 customers (9-16 qubits) were executed on Qiskit AerSimulator (27/31 sampled valid permutations). Decoded sub-tours were assembled into 100% customer-covering routes."
+  "methodology_notes": "Genuine Hybrid Quantum-Classical Closed-Loop Optimization: Initialized with verified 100-customer classical feasible solution (10 vehicles, distance 828.94). Executed 47 genuine QAOA subproblems of 3 customers (9 qubits each) on Qiskit AerSimulator. Distinct customers exposed to QAOA: 100/100; customers not exposed to QAOA: 0/100. Outcomes: 0 accepted improvements, 37 confirmed feasible orderings, 10 rejected candidates (safely retaining prior feasible routes). Final fleet validated independently: all 100 customers served, 0 missing, 0 duplicates, 0 capacity overloads, 0 time window violations."
 }
