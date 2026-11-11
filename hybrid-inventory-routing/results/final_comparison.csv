@@ -1,0 +1,3 @@
+method,energy,selected_customers,demand,slack,total_measurements,feasible_measurements,optimal_measurements
+classical,-774.378753,"[3, 4, 5, 6, 8, 9, 10]",100,0,,,
+qaoa_best,-774.378753,"[3, 4, 5, 6, 8, 9, 10]",100,0,100000,984,5
